@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Futuremed Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #142240;
+    --navy-light: #1e3158;
+    --accent: #ceb07a;
+    --accent-light: #e8d5b0;
+    --white: #ffffff;
+    --off-white: #f7f6f3;
+    --text-muted: #6b7280;
+    --border: rgba(10,22,40,0.1);
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--navy);
+    background: var(--white);
+    overflow-x: hidden;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 4rem;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo { text-decoration: none; }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { opacity: 1; }
+
+  .nav-cta {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: #d4a017;
+    padding: 0.6rem 1.4rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--navy-light); }
+
+  /* ── PAGE HERO ── */
+  .page-hero {
+    padding: 10rem 4rem 6rem;
+    background: #0a1628;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(200,169,110,0.08) 0%, transparent 60%);
+  }
+  .page-hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .page-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .page-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.6;
+  }
+  .page-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.15;
+    max-width: 700px;
+  }
+
+  /* ── MISSION ── */
+  .mission {
+    padding: 7rem 4rem;
+    background: var(--white);
+  }
+  .mission-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+  .mission-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--navy);
+    opacity: 0.5;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .mission-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: #d4a017;
+    opacity: 0.4;
+  }
+  .mission-heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.25;
+  }
+  .mission-body p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+  }
+  .mission-body p:last-child { margin-bottom: 0; }
+
+  /* ── TEAM ── */
+  .team-section {
+    padding: 7rem 4rem;
+    background: var(--off-white);
+  }
+  .team-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--navy);
+    opacity: 0.5;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: #d4a017;
+    opacity: 0.4;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 3.5rem;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .team-card {
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    position: relative;
+    transition: transform 0.25s, box-shadow 0.25s;
+    cursor: default;
+  }
+  .team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(10,22,40,0.08);
+    z-index: 1;
+  }
+  .team-card-accent {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .team-card:hover .team-card-accent { transform: scaleX(1); }
+
+  .team-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #d4a017;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .team-name {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+
+  .team-role {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .team-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* ── ADVISORS ── */
+  .advisors-section {
+    padding: 7rem 4rem;
+    background: #d4a017;
+  }
+  .advisors-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .advisors-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.8;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .advisors-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.6;
+  }
+  .advisors-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 3.5rem;
+  }
+
+  .advisor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .advisor-card {
+    background: var(--navy-mid);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    position: relative;
+    transition: background 0.25s, transform 0.25s;
+    cursor: default;
+  }
+  .advisor-card:hover {
+    background: var(--navy-light);
+    transform: translateY(-4px);
+  }
+
+  .advisor-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(200,169,110,0.15);
+    border: 1px solid rgba(200,169,110,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .advisor-name {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+
+  .advisor-role {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .advisor-desc {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* ── CONTACT CTA ── */
+  .cta-section {
+    padding: 6rem 4rem;
+    background: var(--off-white);
+    text-align: center;
+  }
+  .cta-section .section-eyebrow { justify-content: center; }
+  .cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 400;
+    color: var(--navy);
+    margin: 0.5rem 0 1.25rem;
+  }
+  .cta-sub {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    max-width: 480px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+  }
+  .cta-email {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+    transition: color 0.2s;
+  }
+  .cta-email:hover { color: var(--accent); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #d4a017;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 5rem 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+  }
+  .footer-brand p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+    line-height: 1.8;
+    max-width: 260px;
+    margin-top: 1.25rem;
+  }
+  .footer-col h4 {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 1.25rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+  .footer-col ul li a {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: #ffffff; }
+  .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .page-hero, .mission, .team-section, .advisors-section, .cta-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .mission-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .team-grid, .advisor-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0rem 3rem 0rem 3rem; background:transparent; transition:background 0.4s, backdrop-filter 0.4s;" id="floatnav">
+  <!-- Logo -->
+  <a href="#home" style="text-decoration:none; display:flex; align-items:center; gap:0; flex-shrink:0;">
+    <svg width="180" height="150" viewBox="0 152 680 124" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(340, 200)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 0 -162 A 162 162 0 0 1 162 0 A 162 162 0 0 1 81 140 M -81 140 A 162 162 0 0 1 -162 0 A 162 162 0 0 1 0 -162" stroke-width="2.5" stroke="#ffffff" opacity="0.85"/>
+        <path d="M 95 -95 A 134 134 0 0 1 134 0 A 134 134 0 0 1 67 116 M -67 116 A 134 134 0 0 1 -134 0 A 134 134 0 0 1 -95 -95 A 134 134 0 0 1 0 -134 A 134 134 0 0 1 67 -116" stroke-width="2.2" stroke="#ffffff" opacity="0.65"/>
+        <path d="M 0 -106 A 106 106 0 0 1 106 0 A 106 106 0 0 1 53 92 M -53 92 A 106 106 0 0 1 -106 0 A 106 106 0 0 1 -53 -92 A 106 106 0 0 1 0 -106" stroke-width="2" stroke="#ffffff" opacity="0.5"/>
+        <path d="M -56 -56 A 80 80 0 0 1 0 -80 A 80 80 0 0 1 80 0 A 80 80 0 0 1 40 69 M -40 69 A 80 80 0 0 1 -80 0 A 80 80 0 0 1 -56 -56" stroke-width="1.8" stroke="#ffffff" opacity="0.38"/>
+        <path id="nl-ring1" d="M 0 -54 A 54 54 0 0 0 -54 0 A 54 54 0 0 0 0 54 A 54 54 0 0 0 40 37" stroke-width="1.8" stroke="#c8a96e" opacity="0.9"/>
+        <path id="nl-ring2" d="M 54 0 A 54 54 0 0 0 0 -54" stroke-width="1.8" stroke="#c8a96e" opacity="0.35"/>
+        <circle id="nl-ring3" cx="0" cy="0" r="28" stroke-width="1.6" stroke="#c8a96e" opacity="0.9"/>
+        <circle id="nav-centre-dot" cx="0" cy="0" r="8" fill="#c8a96e" stroke="none"/>
+        <circle cx="0" cy="0" r="3.5" fill="#0a1628" stroke="none"/>
+        <line x1="0" y1="-162" x2="0" y2="-134" stroke-width="2.2" stroke="#ffffff" opacity="0.65"/>
+        <line x1="114" y1="-114" x2="95" y2="-95" stroke-width="2" stroke="#ffffff" opacity="0.55"/>
+        <line x1="162" y1="0" x2="134" y2="0" stroke-width="2" stroke="#ffffff" opacity="0.55"/>
+        <line x1="-162" y1="0" x2="-134" y2="0" stroke-width="2" stroke="#ffffff" opacity="0.55"/>
+        <line x1="-114" y1="114" x2="-95" y2="95" stroke-width="2" stroke="#ffffff" opacity="0.45"/>
+        <line x1="0" y1="-134" x2="0" y2="-106" stroke-width="1.8" stroke="#ffffff" opacity="0.58"/>
+        <line x1="134" y1="0" x2="106" y2="0" stroke-width="1.8" stroke="#ffffff" opacity="0.48"/>
+        <line x1="95" y1="95" x2="75" y2="75" stroke-width="1.8" stroke="#ffffff" opacity="0.45"/>
+        <line x1="-95" y1="-95" x2="-75" y2="-75" stroke-width="1.8" stroke="#ffffff" opacity="0.45"/>
+        <line x1="106" y1="0" x2="80" y2="0" stroke-width="1.8" stroke="#ffffff" opacity="0.5"/>
+        <line x1="-106" y1="0" x2="-80" y2="0" stroke-width="1.8" stroke="#ffffff" opacity="0.45"/>
+        <line x1="0" y1="106" x2="0" y2="80" stroke-width="1.8" stroke="#c8a96e" opacity="0.72"/>
+        <line x1="75" y1="-75" x2="57" y2="-57" stroke-width="1.8" stroke="#ffffff" opacity="0.45"/>
+        <line x1="0" y1="-80" x2="0" y2="-54" stroke-width="1.6" stroke="#ffffff" opacity="0.55"/>
+        <line x1="80" y1="0" x2="54" y2="0" stroke-width="1.6" stroke="#c8a96e" opacity="0.68"/>
+        <line x1="-80" y1="0" x2="-54" y2="0" stroke-width="1.6" stroke="#ffffff" opacity="0.45"/>
+        <line x1="0" y1="80" x2="0" y2="54" stroke-width="1.6" stroke="#c8a96e" opacity="0.62"/>
+        <line x1="0" y1="-54" x2="0" y2="-28" stroke-width="1.5" stroke="#c8a96e" opacity="0.78"/>
+        <line x1="-54" y1="0" x2="-28" y2="0" stroke-width="1.5" stroke="#ffffff" opacity="0.45"/>
+        <line id="nav-stem-line" x1="0" y1="8" x2="0" y2="162" stroke-width="1.6" stroke="#c8a96e" opacity="0.82" stroke-linecap="round"/>
+      </g>
+      <!-- Wordmark -->
+      <text x="340" y="430" font-family="'Cormorant Garamond',Georgia,serif" font-size="72" font-weight="600" fill="#ffffff" text-anchor="middle" letter-spacing="2">future<tspan id="nav-dot" fill="#c8a96e">.</tspan><tspan id="nav-med" fill="#c8a96e">med</tspan></text>
+      <!-- Rule -->
+      <line x1="260" y1="448" x2="420" y2="448" stroke="#c8a96e" stroke-width="1.5" opacity="0.5"/>
+    </svg>
+  </a>
+
+  <div style="display:flex; align-items:center; gap:2.5rem; list-style:none;">
+    <a href="index.html" style="font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.2s;">Home</a>
+    <a href="index.html#partners" style="font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.2s;">Partners</a>
+    <a href="index.html#programs" style="font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.2s;">Programmes</a>
+    <a href="about.html" style="font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.2s;">About</a>
+    <a href="collective.html" style="font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.2s;">The Collective</a>
+    <a href="institute.html" style="font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.2s;">Institute</a>
+  </div>
+  <a href="mailto:info@valueaddition.co" style="font-size:0.75rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--navy); background:var(--accent); padding:0.6rem 1.4rem; text-decoration:none; transition:background 0.2s;">Get in Touch</a>
+</nav>
+<script>
+  const fn = document.getElementById('floatnav');
+  const goldEls = {
+    fill: ['nav-dot','nav-med','nav-centre-dot'],
+    stroke: ['nav-stem-line','nl-ring1','nl-ring2','nl-ring3']
+  };
+  function setLogoColour(col) {
+    goldEls.fill.forEach(id => { const el = document.getElementById(id); if (el) el.setAttribute('fill', col); });
+    goldEls.stroke.forEach(id => { const el = document.getElementById(id); if (el) el.setAttribute('stroke', col); });
+  }
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+      fn.style.background = 'rgba(212,160,23,0.96)';
+      fn.style.backdropFilter = 'blur(12px)';
+      fn.style.borderBottom = '1px solid rgba(10,22,40,0.1)';
+      setLogoColour('#ffffff');
+    } else {
+      fn.style.background = 'transparent';
+      fn.style.backdropFilter = 'none';
+      fn.style.borderBottom = 'none';
+      setLogoColour('#ceb07a');
+    }
+  });
+</script>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div style="position:absolute; inset:0; background-image: linear-gradient(rgba(200,169,110,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(200,169,110,0.06) 1px, transparent 1px); background-size:48px 48px; pointer-events:none;"></div>
+  <div class="page-hero-inner">
+    <div class="page-eyebrow">About Us</div>
+    <h1 class="page-title">The people and mission behind Futuremed Connect</h1>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission">
+  <div class="mission-inner">
+    <div>
+      <div class="mission-label">Our Mission</div>
+      <h2 class="mission-heading">Bringing the world's best medtech ecosystem to India</h2>
+    </div>
+    <div class="mission-body">
+      <p>Our mission is to identify India's most promising medtech companies and equip them with the commercialisation ecosystem they need to succeed.</p>
+      <p>Medtech is a uniquely complex journey — from product conceptualisation to clinical validation, regulatory clearance, and market access. It requires an entire ecosystem to bring an innovation to patients. At Futuremed Connect, we build that ecosystem for founders at every stage of their journey.</p>
+      <p>Early-stage startups work with us to validate product-market fit and build their first commercial foundation. Growth-stage companies refine their GTM strategy and scale across markets. Mature businesses access specialist support for international expansion and global regulatory alignment.</p>
+      <p>If you are building a medtech company, or investing in one, Futuremed Connect is where the right partnerships begin.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section">
+  <div class="team-inner">
+    <div class="section-eyebrow">Our Team</div>
+    <h2 class="section-title">People behind the Collective</h2>
+
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-avatar">AM</div>
+        <div class="team-name"><a href="https://www.linkedin.com/in/alok-mishra-80b2a7/" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px solid rgba(10,22,40,0.2); padding-bottom:1px;">Alok Mishra ↗</a></div>
+        <div class="team-role">Founding Advisor</div>
+        <p class="team-desc">Driving the vision of building a world-class medtech commercialisation ecosystem for India, connecting global expertise with local innovation.</p>
+        <div class="team-card-accent"></div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar">CN</div>
+        <div class="team-name"><a href="https://www.linkedin.com/in/chaitanya-nimmakayala-7bb8a47/" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px solid rgba(10,22,40,0.2); padding-bottom:1px;">Chaitanya Nimmakayala ↗</a></div>
+        <div class="team-role">Founder</div>
+        <p class="team-desc">Bringing together the global medtech ecosystem to support early-stage startups and VC funds navigating the Indian healthcare market.</p>
+        <div class="team-card-accent"></div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar">AI</div>
+        <div class="team-name"><a href="https://www.linkedin.com/in/anil-iyer-24a84ba/" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px solid rgba(10,22,40,0.2); padding-bottom:1px;">Anil Iyer ↗</a></div>
+        <div class="team-role">Founding Advisor</div>
+        <p class="team-desc">Providing strategic guidance and deep industry expertise to shape the direction and growth of Futuremed.</p>
+        <div class="team-card-accent"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ADVISORS -->
+
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-eyebrow">Get Involved</div>
+  <h2 class="cta-title">Join The Collective</h2>
+  <p class="cta-sub">Whether you're a medtech startup, VC fund, angel investor, clinical institution, or strategic partner — we'd love to explore how we can work together.</p>
+  <a href="mailto:info@valueaddition.co" class="cta-email">info@valueaddition.co</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.25rem;">
+        <svg width="64" height="64" viewBox="38 38 324 324" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(200,200)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 0 -162 A 162 162 0 0 1 162 0 A 162 162 0 0 1 81 140 M -81 140 A 162 162 0 0 1 -162 0 A 162 162 0 0 1 0 -162" stroke-width="4" stroke="#ffffff" opacity="0.85"/>
+            <path d="M 95 -95 A 134 134 0 0 1 134 0 A 134 134 0 0 1 67 116 M -67 116 A 134 134 0 0 1 -134 0 A 134 134 0 0 1 -95 -95 A 134 134 0 0 1 0 -134 A 134 134 0 0 1 67 -116" stroke-width="4" stroke="#ffffff" opacity="0.65"/>
+            <path d="M 0 -106 A 106 106 0 0 1 106 0 A 106 106 0 0 1 53 92 M -53 92 A 106 106 0 0 1 -106 0 A 106 106 0 0 1 -53 -92 A 106 106 0 0 1 0 -106" stroke-width="3.5" stroke="#ffffff" opacity="0.5"/>
+            <path d="M -56 -56 A 80 80 0 0 1 0 -80 A 80 80 0 0 1 80 0 A 80 80 0 0 1 40 69 M -40 69 A 80 80 0 0 1 -80 0 A 80 80 0 0 1 -56 -56" stroke-width="3" stroke="#ffffff" opacity="0.38"/>
+            <path d="M 0 -54 A 54 54 0 0 0 -54 0 A 54 54 0 0 0 0 54 A 54 54 0 0 0 40 37" stroke-width="3" stroke="#ffffff" opacity="0.9"/>
+            <path d="M 54 0 A 54 54 0 0 0 0 -54" stroke-width="3" stroke="#ffffff" opacity="0.35"/>
+            <circle cx="0" cy="0" r="28" stroke-width="2.5" stroke="#ffffff" opacity="0.9"/>
+            <circle cx="0" cy="0" r="8" fill="#ffffff" stroke="none"/>
+            <circle cx="0" cy="0" r="3.5" fill="#d4a017" stroke="none"/>
+            <line x1="0" y1="-162" x2="0" y2="-134" stroke-width="3.5" stroke="#ffffff" opacity="0.65"/>
+            <line x1="114" y1="-114" x2="95" y2="-95" stroke-width="3" stroke="#ffffff" opacity="0.55"/>
+            <line x1="162" y1="0" x2="134" y2="0" stroke-width="3" stroke="#ffffff" opacity="0.55"/>
+            <line x1="-162" y1="0" x2="-134" y2="0" stroke-width="3" stroke="#ffffff" opacity="0.55"/>
+            <line x1="0" y1="8" x2="0" y2="162" stroke-width="2.5" stroke="#ffffff" opacity="0.82" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <div>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.7rem; font-weight:600; color:#ffffff; display:block; line-height:1.1;">future<span style="color:#ffffff;">.</span>med</span>
+          <span style="font-family:'DM Sans',sans-serif; font-size:0.6rem; font-weight:600; letter-spacing:0.28em; text-transform:uppercase; color:rgba(255,255,255,0.55); display:block; margin-top:0.2rem;">Connect</span>
+        </div>
+      </div>
+      <p style="font-size:0.85rem; color:rgba(255,255,255,0.45); font-weight:300; line-height:1.8; max-width:240px; font-family:'DM Sans',sans-serif; font-style:italic;">"We build the ecosystem, you scale your innovation."</p>
+
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="#what-we-do">What We Do</a></li>
+        <li><a href="#about">Our Philosophy</a></li>
+        <li><a href="#programs">Programmes</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Ecosystem</h4>
+      <ul>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#partners">Futuremed Investor Circle</a></li>
+        <li><a href="collective.html">The Collective</a></li>
+        <li><a href="about.html#team">Our Team</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:info@valueaddition.co">info@valueaddition.co</a></li>
+        <li><a href="mailto:info@valueaddition.co">Apply to Programme</a></li>
+        <li><a href="mailto:info@valueaddition.co">Partner With Us</a></li>
+        <li><a href="blog.html">Perspectives</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid rgba(255,255,255,0.12); margin-top:auto; padding-top:1.5rem; display:flex; align-items:center; justify-content:space-between;">
+    <span style="font-family:'DM Sans',sans-serif; font-size:0.72rem; color:rgba(255,255,255,0.25); letter-spacing:0.05em;">&copy; 2024 Value Addition Services. All rights reserved.</span>
+    <span style="font-family:'DM Sans',sans-serif; font-size:0.72rem; color:rgba(255,255,255,0.25); letter-spacing:0.05em;">future.med Connect</span>
+  </div>
+</footer>
+
+</body>
+</html>
