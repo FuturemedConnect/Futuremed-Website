@@ -677,20 +677,110 @@
     }
     .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
 
-    @media (max-width: 900px) {
-      .articles-grid { grid-template-columns: 1fr; }
-      .module-card { grid-template-columns: 1fr; }
-      .module-card-meta { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
-      .institute-hero, .articles-section, .modules-section, .section-header { padding-left: 1.5rem; padding-right: 1.5rem; }
-      .footer-top { grid-template-columns: 1fr 1fr; }
-    }
+  /* ── HAMBURGER BUTTON ── */
+  .hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 201;
+    flex-shrink: 0;
+  }
+  .hamburger-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #ffffff;
+    margin: 5px 0;
+    transition: transform 0.3s, opacity 0.3s;
+    border-radius: 2px;
+  }
+  .hamburger-btn.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .hamburger-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-btn.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* ── MOBILE MENU OVERLAY ── */
+  .mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(10,22,40,0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+  .mobile-menu-overlay.open {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .mobile-menu-overlay a {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .mobile-menu-overlay a:hover {
+    color: var(--accent);
+  }
+  .mobile-menu-overlay .mobile-cta {
+    margin-top: 1.5rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--accent);
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  @media (max-width: 1000px) {
+    .articles-grid { grid-template-columns: 1fr; }
+    .module-card { grid-template-columns: 1fr; }
+    .module-card-meta { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  }
+
+  @media (max-width: 768px) {
+    .hamburger-btn { display: block; }
+    #floatnav { padding: 0.75rem 1.25rem !important; }
+    #floatnav .nav-links-desktop { display: none !important; }
+    #floatnav .nav-cta-desktop { display: none !important; }
+    #floatnav .nav-logo svg { width: 120px; height: 100px; }
+    .institute-hero, .articles-section, .modules-section, .section-header { padding-left: 1.25rem; padding-right: 1.25rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 3rem 1.25rem 2rem; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+  }
+
+  @media (max-width: 480px) {
+    #floatnav .nav-logo svg { width: 100px; height: 84px; }
+    .footer-top { grid-template-columns: 1fr; gap: 1.5rem; }
+  }
   </style>
 </head>
 <body>
 
-<nav style="position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0rem 3rem 0rem 3rem; background:transparent; transition:background 0.4s, backdrop-filter 0.4s;" id="floatnav">
+<nav id="floatnav" style="position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0rem 3rem; background:transparent; transition:background 0.4s, backdrop-filter 0.4s;">
   <!-- Logo -->
-  <a href="#home" style="text-decoration:none; display:flex; align-items:center; gap:0; flex-shrink:0;">
+  <a href="index.html#home" class="nav-logo" style="text-decoration:none; display:flex; align-items:center; gap:0; flex-shrink:0;">
     <svg width="180" height="150" viewBox="0 152 680 124" xmlns="http://www.w3.org/2000/svg">
       <g transform="translate(340, 200)" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path d="M 0 -162 A 162 162 0 0 1 162 0 A 162 162 0 0 1 81 140 M -81 140 A 162 162 0 0 1 -162 0 A 162 162 0 0 1 0 -162" stroke-width="2.5" stroke="#ffffff" opacity="0.85"/>
@@ -730,7 +820,7 @@
     </svg>
   </a>
 
-  <div style="display:flex; align-items:center; gap:2.5rem; list-style:none;">
+  <div class="nav-links-desktop" style="display:flex; align-items:center; gap:2.5rem; list-style:none;">
     <a href="index.html" style="font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.2s;">Home</a>
     <a href="index.html#partners" style="font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.2s;">Partners</a>
     <a href="index.html#programs" style="font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.2s;">Programmes</a>
@@ -738,8 +828,25 @@
     <a href="collective.html" style="font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.2s;">The Collective</a>
     <a href="institute.html" style="font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.2s;">Institute</a>
   </div>
-  <a href="mailto:info@valueaddition.co" style="font-size:0.75rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--navy); background:var(--accent); padding:0.6rem 1.4rem; text-decoration:none; transition:background 0.2s;">Get in Touch</a>
+  <a href="mailto:info@valueaddition.co" class="nav-cta-desktop" style="font-size:0.75rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--navy); background:var(--accent); padding:0.6rem 1.4rem; text-decoration:none; transition:background 0.2s;">Get in Touch</a>
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="index.html#partners">Partners</a>
+  <a href="index.html#programs">Programmes</a>
+  <a href="about.html">About</a>
+  <a href="collective.html">The Collective</a>
+  <a href="institute.html" onclick="closeMobileMenu()">Institute</a>
+  <a href="mailto:info@valueaddition.co" class="mobile-cta">Get in Touch</a>
+</div>
+
 <script>
   const fn = document.getElementById('floatnav');
   const goldEls = {
@@ -763,7 +870,24 @@
       setLogoColour('#ceb07a');
     }
   });
+
+  // Hamburger menu toggle
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  function toggleMobileMenu() {
+    hamburgerBtn.classList.toggle('active');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMobileMenu() {
+    hamburgerBtn.classList.remove('active');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  hamburgerBtn.addEventListener('click', toggleMobileMenu);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileMenu(); });
 </script>
+
 
 <!-- ── PAGE HERO ── -->
 <div class="institute-hero" id="home">
