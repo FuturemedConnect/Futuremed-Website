@@ -322,6 +322,28 @@
     opacity: 0.4;
   }
 
+  .col-section-eyebrow {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--navy);
+    opacity: 0.5;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .col-section-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--navy);
+    opacity: 0.4;
+  }
+
   .section-title {
     font-family: var(--font-display);
     font-size: 2.4rem;
@@ -1106,7 +1128,40 @@
     .about-top { grid-template-columns: 1fr; gap: 2.5rem; }
     .four-a { grid-template-columns: repeat(2, 1fr); }
     .pr-wrap { grid-template-columns: 1fr !important; }
-    .pr-left { position: static !important; height: auto !important; padding-right: 0 !important; margin-bottom: 2rem; }
+    .pr-left { 
+      position: sticky !important; 
+      top: 80px !important; 
+      height: auto !important; 
+      padding-right: 0 !important; 
+      margin-bottom: 2rem; 
+      z-index: 10;
+      background: white;
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      gap: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(10,22,40,0.08);
+      white-space: nowrap;
+    }
+    .pr-left::-webkit-scrollbar { display: none; }
+    .pr-left { -ms-overflow-style: none; scrollbar-width: none; }
+    .pr-section-eyebrow { display: none !important; }
+    .pr-group-label { margin-bottom: 0 !important; }
+    .pr-group-label .pr-label-eyebrow { display: none !important; }
+    .pr-group-label .pr-label-desc { 
+        display: block !important;
+        font-family: var(--font-display) !important;
+        font-size: 1.2rem !important;
+        color: rgba(10,22,40,0.3) !important; 
+        text-transform: none !important;
+        letter-spacing: 0 !important;
+        margin-bottom: 0 !important;
+        transition: color 0.3s ease;
+    }
+    .pr-group-label.active .pr-label-desc {
+        color: #0a1628 !important;
+    }
     .pr-right { border-left: none !important; padding-left: 0 !important; }
     .pr-right-group { height: auto !important; min-height: 0 !important; padding: 2rem 0 !important; }
     .prog-split-grid { grid-template-columns: 1fr !important; }
@@ -1680,15 +1735,15 @@
     <p class="pr-section-eyebrow">Our Partners</p>
     <span class="pr-group-label active" data-group="0">
       <span class="pr-label-eyebrow">Industry Experts</span>
-      The Collective — 50+ experts, ~20 years each.
+      <span class="pr-label-desc">The Collective — 50+ experts, ~20 years each.</span>
     </span>
     <span class="pr-group-label" data-group="1">
       <span class="pr-label-eyebrow">Scientific &amp; Clinical</span>
-      Institutions that pioneered the field.
+      <span class="pr-label-desc">Institutions that pioneered the field.</span>
     </span>
     <span class="pr-group-label" data-group="2">
       <span class="pr-label-eyebrow">Knowledge Partners</span>
-      Expertise that powers commercialisation.
+      <span class="pr-label-desc">Expertise that powers commercialisation.</span>
     </span>
   </div>
 
@@ -1732,14 +1787,27 @@
   const groups = document.querySelectorAll('.pr-right-group');
 
   function onScroll() {
+    let activeIndex = 0;
+    let minDistance = Infinity;
+    
     groups.forEach((g, i) => {
       const rect = g.getBoundingClientRect();
       const mid = window.innerHeight * 0.5;
-      if (rect.top <= mid && rect.bottom >= mid) {
-        labels.forEach(l => l.classList.remove('active'));
-        labels[i] && labels[i].classList.add('active');
+      
+      // Calculate distance from the middle of the group to the middle of the screen
+      const groupMid = rect.top + (rect.height / 2);
+      const distance = Math.abs(groupMid - mid);
+      
+      if (distance < minDistance) {
+        minDistance = distance;
+        activeIndex = i;
       }
     });
+
+    labels.forEach(l => l.classList.remove('active'));
+    if (labels[activeIndex]) {
+      labels[activeIndex].classList.add('active');
+    }
   }
 
   window.addEventListener('scroll', onScroll, {passive: true});
@@ -2052,7 +2120,7 @@ document.querySelectorAll('.prog-row-item').forEach(item => {
         </g>
       </svg>
     </div> -->
-    <div class="section-eyebrow" style="justify-content: center; color: var(--navy);">Get Involved</div>
+    <div class="col-section-eyebrow" style="justify-content: center;">Get Involved</div>
     <h2 class="contact-title">Join The Collective</h2>
     <p class="contact-sub">
       Whether you're a medtech startup, VC fund, angel investor, clinical institution, or strategic partner — we'd love to explore how we can work together.
@@ -2146,7 +2214,7 @@ document.querySelectorAll('.prog-row-item').forEach(item => {
         <li><a href="mailto:info@valueaddition.co">info@valueaddition.co</a></li>
         <li><a href="mailto:info@valueaddition.co">Apply to Programme</a></li>
         <li><a href="mailto:info@valueaddition.co">Partner With Us</a></li>
-        <li><a href="#">Perspectives</a></li>
+        <li><a href="institute.html">Perspectives</a></li>
       </ul>
     </div>
   </div>
