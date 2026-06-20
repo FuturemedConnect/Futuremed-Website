@@ -405,164 +405,102 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 
 <!-- OUR PEOPLE SECTION -->
-<section class="people-section" style="padding:7rem 4rem; background:#f2f1ed;">
+<section class="experts-section" style="background:#f2f1ed;">
   <div style="max-width:1200px; margin:0 auto;">
 
     <!-- Eyebrow -->
     <div class="section-eyebrow">Meet the Collective</div>
     <h2 class="section-title" style="margin-top:0; text-align:left;">Our Platform of Experts</h2>
 
-    <!-- Left nav + right content -->
-    <div class="people-wrap" style="display:grid; grid-template-columns:220px 1fr; gap:0; min-height:420px;">
+    <!-- Option A: Pill tags without numbers -->
+    <div style="display:flex; flex-direction:column; gap:2.5rem;">
 
-      <!-- Left nav -->
-      <div class="people-nav" style="background:#ffffff;">
-        <div class="people-nav-item active" onclick="switchPeople('ta')" id="pnav-ta" style="padding:1.75rem 1.5rem; cursor:pointer; border-left:4px solid #c8a96e; background:#d4a017;">
-          <div style="font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:600; color:#ffffff; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.35rem;">Therapeutic Areas</div>
-          <div style="font-family:'DM Sans',sans-serif; font-size:0.72rem; color:#c8a96e; opacity:0.8;">51 industry experts</div>
+      <!-- Therapeutic Areas -->
+      <div>
+        <div style="display:flex; align-items:baseline; gap:1rem; margin-bottom:1rem;">
+          <div style="font-family:'DM Sans',sans-serif; font-size:0.7rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#c8a96e;">Therapeutic Areas</div>
+          <div style="font-family:'DM Sans',sans-serif; font-size:0.7rem; color:rgba(10,22,40,0.35);">14 areas &nbsp;&middot;&nbsp; 51 experts &nbsp;&middot;&nbsp; avg 20+ years</div>
         </div>
-        <div style="height:1px; background:rgba(10,22,40,0.06);"></div>
-        <div class="people-nav-item" onclick="switchPeople('fa')" id="pnav-fa" style="padding:1.75rem 1.5rem; cursor:pointer; border-left:4px solid transparent;">
-          <div style="font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:600; color:#0a1628; opacity:0.55; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.35rem;">Functional Areas</div>
-          <div style="font-family:'DM Sans',sans-serif; font-size:0.72rem; color:#c8a96e; opacity:0.8;">18 functional experts</div>
-        </div>
-        <div style="height:1px; background:rgba(10,22,40,0.06);"></div>
-        <div class="people-nav-item" onclick="switchPeople('ph')" id="pnav-ph" style="padding:1.75rem 1.5rem; cursor:pointer; border-left:4px solid transparent;">
-          <div style="font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:600; color:#0a1628; opacity:0.55; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.35rem;">Public Health</div>
-          <div style="font-family:'DM Sans',sans-serif; font-size:0.72rem; color:#c8a96e; opacity:0.8;">7 public health experts</div>
-        </div>
-        <div style="height:1px; background:rgba(10,22,40,0.06);"></div>
-        <div class="people-nav-item" onclick="switchPeople('sbl')" id="pnav-sbl" style="padding:1.75rem 1.5rem; cursor:pointer; border-left:4px solid transparent;">
-          <div style="font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:600; color:#0a1628; opacity:0.55; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.35rem;">C-level Global Leaders</div>
-          
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#0a1628; background:#ffffff; border:0.5px solid rgba(10,22,40,0.15); padding:7px 18px; border-radius:100px;">Cardiology</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#c8a96e; background:#ffffff; border:0.5px solid rgba(200,169,110,0.4); padding:7px 18px; border-radius:100px;">Orthopedics</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#0a1628; background:#ffffff; border:0.5px solid rgba(10,22,40,0.15); padding:7px 18px; border-radius:100px;">Oncology</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#0a1628; background:#ffffff; border:0.5px solid rgba(10,22,40,0.15); padding:7px 18px; border-radius:100px;">Radiology</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#0a1628; background:#ffffff; border:0.5px solid rgba(10,22,40,0.15); padding:7px 18px; border-radius:100px;">Neurology</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#0a1628; background:#ffffff; border:0.5px solid rgba(10,22,40,0.15); padding:7px 18px; border-radius:100px;">General Surgery</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#0a1628; background:#ffffff; border:0.5px solid rgba(10,22,40,0.15); padding:7px 18px; border-radius:100px;">Surgical Robotics</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#0a1628; background:#ffffff; border:0.5px solid rgba(10,22,40,0.15); padding:7px 18px; border-radius:100px;">Nephrology</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:rgba(10,22,40,0.5); background:#ffffff; border:0.5px solid rgba(10,22,40,0.1); padding:7px 18px; border-radius:100px;">ENT</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:rgba(10,22,40,0.5); background:#ffffff; border:0.5px solid rgba(10,22,40,0.1); padding:7px 18px; border-radius:100px;">Dental</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:rgba(10,22,40,0.5); background:#ffffff; border:0.5px solid rgba(10,22,40,0.1); padding:7px 18px; border-radius:100px;">Diabetes &amp; Metabolic</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:rgba(10,22,40,0.5); background:#ffffff; border:0.5px solid rgba(10,22,40,0.1); padding:7px 18px; border-radius:100px;">Gynaecology &amp; Maternal Health</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:rgba(10,22,40,0.5); background:#ffffff; border:0.5px solid rgba(10,22,40,0.1); padding:7px 18px; border-radius:100px;">Capital Equipment</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:rgba(10,22,40,0.5); background:#ffffff; border:0.5px solid rgba(10,22,40,0.1); padding:7px 18px; border-radius:100px;">AI-based Digital Diagnostics</span>
         </div>
       </div>
 
-      <!-- Right content panel -->
-      <div class="people-content" style="background:#ffffff; border-top:2px solid #c8a96e; padding:3rem 3.5rem; position:relative;">
+      <div style="height:0.5px; background:rgba(10,22,40,0.08);"></div>
 
-        <!-- Therapeutic Areas -->
-        <div id="pcontent-ta">
-          <div style="border-left:3px solid #ceb07a; padding-left:1.25rem; margin-bottom:1.75rem;">
-            <div style="font-family:'Cormorant Garamond',Georgia,serif; font-size:48px; font-weight:400; color:#0a1628; line-height:1;">51</div>
-            <div style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; font-style:italic; color:rgba(10,22,40,0.5); line-height:1.5; margin-top:4px;">industry experts &nbsp;&middot;&nbsp; avg 20+ years &nbsp;&middot;&nbsp; 14 therapeutic areas</div>
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:0.5rem 0.9rem; align-items:baseline;">
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:24px; font-weight:400; color:#0a1628;">Cardiology</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:15px; font-weight:400; color:rgba(10,22,40,0.5);">Neurology</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:21px; font-weight:400; color:#ceb07a;">Orthopedics</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:13px; font-weight:400; color:rgba(10,22,40,0.3);">ENT</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:19px; font-weight:400; color:rgba(10,22,40,0.6);">Oncology</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:13px; font-weight:400; color:rgba(10,22,40,0.3);">Dental</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:22px; font-weight:400; color:#0a1628;">Radiology</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; font-weight:400; color:rgba(10,22,40,0.5);">Nephrology</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:17px; font-weight:400; color:#ceb07a; opacity:0.8;">General Surgery</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:13px; font-weight:400; color:rgba(10,22,40,0.3);">Diabetes &amp; Metabolic</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:18px; font-weight:400; color:rgba(10,22,40,0.6);">Surgical Robotics</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; font-weight:400; color:rgba(10,22,40,0.3);">Gynaecology &amp; Maternal Health</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:16px; font-weight:400; color:rgba(10,22,40,0.5);">Capital Equipment</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:15px; font-weight:400; color:rgba(10,22,40,0.3);">AI-based Digital Diagnostics</span>
-          </div>
+      <!-- Functional Areas -->
+      <div>
+        <div style="display:flex; align-items:baseline; gap:1rem; margin-bottom:1rem;">
+          <div style="font-family:'DM Sans',sans-serif; font-size:0.7rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#c8a96e;">Functional Areas</div>
+          <div style="font-family:'DM Sans',sans-serif; font-size:0.7rem; color:rgba(10,22,40,0.35);">8 disciplines &nbsp;&middot;&nbsp; 18 experts &nbsp;&middot;&nbsp; avg 18+ years</div>
         </div>
-
-        <!-- Functional Areas -->
-        <div id="pcontent-fa" style="display:none;">
-          <div style="border-left:3px solid #ceb07a; padding-left:1.25rem; margin-bottom:1.75rem;">
-            <div style="font-family:'Cormorant Garamond',Georgia,serif; font-size:48px; font-weight:400; color:#0a1628; line-height:1;">18</div>
-            <div style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; font-style:italic; color:rgba(10,22,40,0.5); line-height:1.5; margin-top:4px;">functional experts &nbsp;&middot;&nbsp; avg 18+ years &nbsp;&middot;&nbsp; 8 disciplines</div>
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:0.5rem 0.9rem; align-items:baseline;">
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:23px; font-weight:400; color:#0a1628;">Regulatory</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:18px; font-weight:400; color:#ceb07a;">Market Access</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:15px; font-weight:400; color:rgba(10,22,40,0.5);">Clinical Research</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:21px; font-weight:400; color:#0a1628;">Manufacturing &amp; QMS</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:13px; font-weight:400; color:rgba(10,22,40,0.3);">Patenting &amp; IP</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:17px; font-weight:400; color:rgba(10,22,40,0.6);">Medtech Marketing &amp; Launch</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:13px; font-weight:400; color:rgba(10,22,40,0.3);">Leadership &amp; HR</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:16px; font-weight:400; color:#ceb07a; opacity:0.8;">Professional Education &amp; Clinical Marketing</span>
-          </div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#c8a96e; background:#ffffff; border:0.5px solid rgba(200,169,110,0.4); padding:7px 18px; border-radius:100px;">Regulatory</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#c8a96e; background:#ffffff; border:0.5px solid rgba(200,169,110,0.4); padding:7px 18px; border-radius:100px;">Market Access</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#0a1628; background:#ffffff; border:0.5px solid rgba(10,22,40,0.15); padding:7px 18px; border-radius:100px;">Manufacturing &amp; QMS</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#0a1628; background:#ffffff; border:0.5px solid rgba(10,22,40,0.15); padding:7px 18px; border-radius:100px;">Clinical Research</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#0a1628; background:#ffffff; border:0.5px solid rgba(10,22,40,0.15); padding:7px 18px; border-radius:100px;">Medtech Marketing &amp; Launch</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:rgba(10,22,40,0.5); background:#ffffff; border:0.5px solid rgba(10,22,40,0.1); padding:7px 18px; border-radius:100px;">Patenting &amp; IP</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:rgba(10,22,40,0.5); background:#ffffff; border:0.5px solid rgba(10,22,40,0.1); padding:7px 18px; border-radius:100px;">Leadership &amp; HR</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:rgba(10,22,40,0.5); background:#ffffff; border:0.5px solid rgba(10,22,40,0.1); padding:7px 18px; border-radius:100px;">Professional Education &amp; Clinical Marketing</span>
         </div>
-
-        <!-- Public Health -->
-        <div id="pcontent-ph" style="display:none;">
-          <div style="border-left:3px solid #ceb07a; padding-left:1.25rem; margin-bottom:1.75rem;">
-            <div style="font-family:'Cormorant Garamond',Georgia,serif; font-size:48px; font-weight:400; color:#0a1628; line-height:1;">7</div>
-            <div style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; font-style:italic; color:rgba(10,22,40,0.5); line-height:1.5; margin-top:4px;">public health specialists &nbsp;&middot;&nbsp; bridging non-profit &amp; for-profit medtech</div>
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:0.5rem 0.9rem; align-items:baseline;">
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:22px; font-weight:400; color:#0a1628;">Health Policy</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:16px; font-weight:400; color:#ceb07a;">WHO Consultants</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:19px; font-weight:400; color:#0a1628;">Public Sector Access</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; font-weight:400; color:rgba(10,22,40,0.5);">Professors of Public Health</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:17px; font-weight:400; color:rgba(10,22,40,0.6);">Last-mile Delivery</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:15px; font-weight:400; color:#ceb07a; opacity:0.8;">Impact Consulting</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:13px; font-weight:400; color:rgba(10,22,40,0.3);">Private&ndash;Public Partnerships</span>
-          </div>
-        </div>
-
-        <!-- C-level Global Leaders -->
-        <div id="pcontent-sbl" style="display:none;">
-          <div style="border-left:3px solid #ceb07a; padding-left:1.25rem; margin-bottom:1.75rem;">
-            <div style="font-family:'Cormorant Garamond',Georgia,serif; font-size:48px; font-weight:400; color:#0a1628; line-height:1;">C-suite</div>
-            <div style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; font-style:italic; color:rgba(10,22,40,0.5); line-height:1.5; margin-top:4px;">investors, board members &amp; academics &mdash; still deeply engaged with what&rsquo;s being built next</div>
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:0.5rem 0.9rem; align-items:baseline;">
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:22px; font-weight:400; color:#0a1628;">Category Builders</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:16px; font-weight:400; color:#ceb07a;">Global Distribution</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:19px; font-weight:400; color:#0a1628;">Board Members</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; font-weight:400; color:rgba(10,22,40,0.5);">Regulatory Navigation</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:17px; font-weight:400; color:rgba(10,22,40,0.6);">Investor Networks</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:20px; font-weight:400; color:#ceb07a; opacity:0.8;">Market Failure Recovery</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:13px; font-weight:400; color:rgba(10,22,40,0.3);">Academic Leadership</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:15px; font-weight:400; color:rgba(10,22,40,0.6);">Commercial Scale-up</span>
-          </div>
-        </div>
-
       </div>
 
+      <div style="height:0.5px; background:rgba(10,22,40,0.08);"></div>
+
+      <!-- Public Health -->
+      <div>
+        <div style="display:flex; align-items:baseline; gap:1rem; margin-bottom:1rem;">
+          <div style="font-family:'DM Sans',sans-serif; font-size:0.7rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#c8a96e;">Public Health</div>
+          <div style="font-family:'DM Sans',sans-serif; font-size:0.7rem; color:rgba(10,22,40,0.35);">7 experts &nbsp;&middot;&nbsp; non-profit &amp; for-profit bridge</div>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#0a1628; background:#ffffff; border:0.5px solid rgba(10,22,40,0.15); padding:7px 18px; border-radius:100px;">Health Policy</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#c8a96e; background:#ffffff; border:0.5px solid rgba(200,169,110,0.4); padding:7px 18px; border-radius:100px;">WHO Consultants</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#0a1628; background:#ffffff; border:0.5px solid rgba(10,22,40,0.15); padding:7px 18px; border-radius:100px;">Public Sector Access</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#0a1628; background:#ffffff; border:0.5px solid rgba(10,22,40,0.15); padding:7px 18px; border-radius:100px;">Last-mile Delivery</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:rgba(10,22,40,0.5); background:#ffffff; border:0.5px solid rgba(10,22,40,0.1); padding:7px 18px; border-radius:100px;">Professors of Public Health</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:rgba(10,22,40,0.5); background:#ffffff; border:0.5px solid rgba(10,22,40,0.1); padding:7px 18px; border-radius:100px;">Impact Consulting</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:rgba(10,22,40,0.5); background:#ffffff; border:0.5px solid rgba(10,22,40,0.1); padding:7px 18px; border-radius:100px;">Private&ndash;Public Partnerships</span>
+        </div>
       </div>
+
+      <div style="height:0.5px; background:rgba(10,22,40,0.08);"></div>
+
+      <!-- C-suite -->
+      <div>
+        <div style="display:flex; align-items:baseline; gap:1rem; margin-bottom:1rem;">
+          <div style="font-family:'DM Sans',sans-serif; font-size:0.7rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#c8a96e;">C-suite Global Leaders</div>
+          <div style="font-family:'DM Sans',sans-serif; font-size:0.7rem; color:rgba(10,22,40,0.35);">Investors &nbsp;&middot;&nbsp; board members &nbsp;&middot;&nbsp; academics</div>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#c8a96e; background:#ffffff; border:0.5px solid rgba(200,169,110,0.4); padding:7px 18px; border-radius:100px;">Category Builders</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#c8a96e; background:#ffffff; border:0.5px solid rgba(200,169,110,0.4); padding:7px 18px; border-radius:100px;">Board Members</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#0a1628; background:#ffffff; border:0.5px solid rgba(10,22,40,0.15); padding:7px 18px; border-radius:100px;">Investor Networks</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#0a1628; background:#ffffff; border:0.5px solid rgba(10,22,40,0.15); padding:7px 18px; border-radius:100px;">Global Distribution</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:#0a1628; background:#ffffff; border:0.5px solid rgba(10,22,40,0.15); padding:7px 18px; border-radius:100px;">Commercial Scale-up</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:rgba(10,22,40,0.5); background:#ffffff; border:0.5px solid rgba(10,22,40,0.1); padding:7px 18px; border-radius:100px;">Regulatory Navigation</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:rgba(10,22,40,0.5); background:#ffffff; border:0.5px solid rgba(10,22,40,0.1); padding:7px 18px; border-radius:100px;">Academic Leadership</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:14px; color:rgba(10,22,40,0.5); background:#ffffff; border:0.5px solid rgba(10,22,40,0.1); padding:7px 18px; border-radius:100px;">Market Failure Recovery</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
-
-<script>
-function switchPeople(key) {
-  ['ta','fa','ph','sbl'].forEach(k => {
-    const nav = document.getElementById('pnav-' + k);
-    const content = document.getElementById('pcontent-' + k);
-    if (k === key) {
-      if (window.innerWidth > 768) {
-        nav.style.background = '#d4a017';
-        nav.style.borderLeft = '4px solid #c8a96e';
-      } else {
-        nav.style.background = 'transparent';
-      }
-      nav.classList.add('active');
-      nav.querySelector('div').style.color = window.innerWidth > 768 ? '#ffffff' : '#0a1628';
-      nav.querySelector('div').style.opacity = '1';
-      content.style.display = 'block';
-    } else {
-      nav.style.background = window.innerWidth > 768 ? '#ffffff' : 'transparent';
-      if (window.innerWidth > 768) {
-        nav.style.borderLeft = '4px solid transparent';
-      }
-      nav.classList.remove('active');
-      nav.querySelector('div').style.color = '#0a1628';
-      nav.querySelector('div').style.opacity = '0.55';
-      content.style.display = 'none';
-    }
-  });
-}
-// Listen to resize to fix nav styles
-window.addEventListener('resize', () => {
-  const activeNav = document.querySelector('.people-nav-item.active');
-  if (activeNav) {
-    const id = activeNav.id.replace('pnav-', '');
-    switchPeople(id);
-  }
-});
-switchPeople('ta');
-</script>
 
 <section class="cta-section">
   <h2 class="cta-title">Join The Collective</h2>
@@ -632,10 +570,10 @@ switchPeople('ta');
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-        <li><a href="/cdn-cgi/l/email-protection#264f4840496650474a53434742424f524f4948084549"><span class="__cf_email__" data-cfemail="630a0d050c2315020f16060207070a170a0c0d4d000c">[email&#160;protected]</span></a></li>
-        <li><a href="/cdn-cgi/l/email-protection#c3aaada5ac83b5a2afb6a6a2a7a7aab7aaacadeda0ac">Apply to Programme</a></li>
-        <li><a href="/cdn-cgi/l/email-protection#e980878f86a99f88859c8c888d8d809d808687c78a86">Partner With Us</a></li>
-        <li><a href="blog.html">Perspectives</a></li>
+        <li><a href="mailto:info@valueaddition.co">info@valueaddition.co</a></li>
+        <li><a href="mailto:info@valueaddition.co">Apply to Programme</a></li>
+        <li><a href="mailto:info@valueaddition.co">Partner With Us</a></li>
+        <li><a href="#">Perspectives</a></li>
       </ul>
     </div>
   </div>

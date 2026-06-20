@@ -623,6 +623,224 @@
       font-style: italic;
     }
 
+    /* ── COLLAPSIBLE TRACK ── */
+    .track-card {
+      background: var(--navy);
+      color: #fff;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      transition: box-shadow 0.25s ease;
+    }
+    .track-card:hover { box-shadow: 0 16px 48px rgba(10,22,40,0.18); }
+
+    .track-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 3rem;
+      cursor: pointer;
+      user-select: none;
+      border-bottom: 1px solid rgba(255,255,255,0.0);
+      transition: border-color 0.3s;
+    }
+    .track-header:hover { background: rgba(255,255,255,0.02); }
+    .track-card.open .track-header { border-bottom-color: rgba(255,255,255,0.07); }
+
+    .track-header-left { display: flex; align-items: center; gap: 2.5rem; }
+    .track-number {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.15);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .track-header-info {}
+    .track-label {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+    }
+    .track-name {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .track-header-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .track-pills {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .track-pill {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 0.28rem 0.7rem;
+    }
+    .track-pill.active {
+      color: var(--accent);
+      border-color: rgba(206,176,122,0.35);
+    }
+    .track-toggle {
+      width: 32px;
+      height: 32px;
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: border-color 0.2s;
+    }
+    .track-card.open .track-toggle { border-color: rgba(255,255,255,0.25); }
+    .track-toggle svg {
+      transition: transform 0.3s ease;
+    }
+    .track-card.open .track-toggle svg { transform: rotate(45deg); }
+
+    .track-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.35s ease;
+    }
+    .track-card.open .track-body { grid-template-rows: 1fr; }
+    .track-body-inner {
+      overflow: hidden;
+    }
+    .track-body-content {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      border-top: 0;
+    }
+
+    .track-meta {
+      background: rgba(255,255,255,0.03);
+      border-right: 1px solid rgba(255,255,255,0.07);
+      padding: 2.5rem 3rem;
+    }
+    .track-meta-label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 0.5rem;
+    }
+    .track-meta-value {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+    }
+    .track-meta-value strong {
+      display: block;
+      color: #fff;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+    .track-status {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-top: auto;
+    }
+    .track-status-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .track-status-dot.upcoming { background: rgba(255,255,255,0.25); }
+    .track-status-text {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .track-content {
+      padding: 2.5rem 3rem;
+    }
+    .track-description {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.85;
+      max-width: 560px;
+      margin-bottom: 2rem;
+    }
+    .track-modules {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .track-module {
+      padding: 1.25rem;
+      background: rgba(255,255,255,0.04);
+      border-left: 2px solid rgba(206,176,122,0.3);
+    }
+    .track-module-title {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.4;
+      margin-bottom: 0.4rem;
+    }
+    .track-module-detail {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.55;
+    }
+    .track-cta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .track-cta a {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--accent);
+      padding: 0.75rem 1.75rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .track-cta a:hover { background: #d4a017; }
+    .track-cta span {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.28);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .track-body-content { grid-template-columns: 1fr; }
+      .track-meta { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+      .track-header { padding: 1.5rem; }
+      .track-header-left { gap: 1.25rem; }
+      .track-pills { display: none; }
+    }
+
     /* ── FOOTER ── */
   footer {
     background: #060e1a;
@@ -771,8 +989,6 @@
 
   @media (max-width: 1000px) {
     .articles-grid { grid-template-columns: 1fr; }
-    .module-card { grid-template-columns: 1fr; }
-    .module-card-meta { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
   }
 
   @media (max-width: 768px) {
@@ -976,69 +1192,148 @@
 
   <div class="modules-section">
 
-    <!-- IIM-B Module Card -->
-    <div class="module-card">
-      <div class="module-card-meta">
-        <div>
-          <div class="module-partner-label">Current Programme</div>
-          <div class="module-partner-name">IIM Bangalore<br/>NSRCEL Healthcare Cohort</div>
-          <div class="module-tags">
-            <span class="module-tag">Business Track</span>
-            <span class="module-tag">5–6 Months</span>
-            <span class="module-tag">June 2026</span>
+    <!-- Track 1: The Marketing Blueprint -->
+    <div class="track-card open" id="track-marketing">
+      <div class="track-header" onclick="toggleTrack('track-marketing')">
+        <div class="track-header-left">
+          <div class="track-number">01</div>
+          <div class="track-header-info">
+            <div class="track-label">Marketing Track</div>
+            <div class="track-name">The Marketing Blueprint</div>
           </div>
         </div>
-        <div class="module-status">
-          <div class="module-status-dot"></div>
-          <div class="module-status-text">Active · Bootcamp 20 June 2026</div>
+        <div class="track-header-right">
+          <div class="track-pills">
+            <span class="track-pill active">Active at IIM-B</span>
+            <span class="track-pill">5–6 Months</span>
+            <span class="track-pill">4A-5P Framework</span>
+          </div>
+          <div class="track-toggle">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="6" y1="0" x2="6" y2="12" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+              <line x1="0" y1="6" x2="12" y2="6" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+            </svg>
+          </div>
         </div>
       </div>
-
-      <div class="module-card-body">
-        <div class="module-title">From Technology to Business Plan</div>
-        <p class="module-description">
-          A hands-on 5–6 month track that takes medtech founders from clinical problem validation all the way through to a fundable business plan — covering market ecosystem mapping, value proposition, business model, sales pitch and GTM strategy. Built on the 4A-5P framework. Delivered across four cohort groups based on technology and therapeutic fit.
-        </p>
-
-        <div class="module-timeline">
-          <div class="module-month">
-            <div class="module-month-label">Month 1 · Bootcamp</div>
-            <div class="module-month-title">Market Ecosystem &amp; Clinical Problem</div>
-            <div class="module-month-detail">4A-5P framework, source of volume, feature-benefit mapping. Breakout sessions by therapeutic area.</div>
+      <div class="track-body">
+        <div class="track-body-inner">
+          <div class="track-body-content">
+            <div class="track-meta">
+              <div class="track-meta-label">Currently Running At</div>
+              <div class="track-meta-value">
+                <strong>IIM Bangalore · NSRCEL</strong>
+                Healthcare Cohort, June 2026
+              </div>
+              <div class="track-meta-label">Format</div>
+              <div class="track-meta-value">Bootcamp + 3 structured sessions across the cohort programme.</div>
+              <div class="track-meta-label">Built On</div>
+              <div class="track-meta-value">The 4A-5P Framework — Access, Adoption, Awareness, Affordability</div>
+              <div class="track-status">
+                <div class="track-status-dot"></div>
+                <div class="track-status-text">Active · Bootcamp 26 June 2026</div>
+              </div>
+            </div>
+            <div class="track-content">
+              <p class="track-description">A structured marketing track for medtech founders — from market ecosystem and foundational strategy through to a complete marketing plan. Built on the 4A-5P framework.</p>
+              <div class="track-modules">
+                <div class="track-module">
+                  <div class="track-module-title">Marketing Foundations — Objective, Volume &amp; Differentiation</div>
+                  <div class="track-module-detail">4A-5P market ecosystem, business objective, marketing objective &amp; source of volume, main vs. dynamic variable, targeting &amp; positioning.</div>
+                </div>
+                <div class="track-module">
+                  <div class="track-module-title">Value Proposition</div>
+                  <div class="track-module-detail">Differentiator, positioning, and field validation of customer segments.</div>
+                </div>
+                <div class="track-module">
+                  <div class="track-module-title">Selling &amp; Communication Plan</div>
+                  <div class="track-module-detail">Sales approach, communication strategy, pitch development, and real-market testing.</div>
+                </div>
+                <div class="track-module">
+                  <div class="track-module-title">Final Presentation</div>
+                  <div class="track-module-detail">Complete marketing plan evaluated by a senior panel of industry and IIM-B experts.</div>
+                </div>
+              </div>
+              <div class="track-cta">
+                <a href="mailto:info@valueaddition.co">Enquire about running this track</a>
+                <span>Available for incubators and companies</span>
+              </div>
+            </div>
           </div>
-          <div class="module-month">
-            <div class="module-month-label">Month 2</div>
-            <div class="module-month-title">Value Proposition</div>
-            <div class="module-month-detail">Dynamic variable, differentiator, positioning. Field interviews to validate customer segments.</div>
-          </div>
-          <div class="module-month">
-            <div class="module-month-label">Month 4</div>
-            <div class="module-month-title">Sales &amp; GTM</div>
-            <div class="module-month-detail">Communication plan, sales pitch, role-plays with hospital procurement. Real-market testing.</div>
-          </div>
-          <div class="module-month">
-            <div class="module-month-label">Month 6</div>
-            <div class="module-month-title">Graduation Presentation</div>
-            <div class="module-month-detail">Complete business plan evaluated by a senior panel of industry and IIM-B experts.</div>
-          </div>
-        </div>
-
-        <div class="module-cta">
-          <a href="mailto:info@valueaddition.co">Enquire about running this at your incubator</a>
-          <span>Customised for your cohort size &amp; focus</span>
         </div>
       </div>
     </div>
 
-    <!-- Placeholder for future modules -->
-    <div style="border: 1px dashed rgba(10,22,40,0.15); padding: 3rem; text-align: center; background: transparent;">
-      <div style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(10,22,40,0.3); margin-bottom: 0.75rem;">Coming Soon</div>
-      <div style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 400; color: rgba(10,22,40,0.25); margin-bottom: 0.5rem;">Investor Track · Fundraising Readiness</div>
-      <p style="font-size: 0.85rem; color: rgba(10,22,40,0.3); line-height: 1.7;">A focused module for founders approaching Series A — covering investor narrative, financial model literacy, and due-diligence preparation.</p>
+    <!-- Track 2: The Business Track -->
+    <div class="track-card" id="track-business">
+      <div class="track-header" onclick="toggleTrack('track-business')">
+        <div class="track-header-left">
+          <div class="track-number">02</div>
+          <div class="track-header-info">
+            <div class="track-label">Business Track</div>
+            <div class="track-name">The Business Track</div>
+          </div>
+        </div>
+        <div class="track-header-right">
+          <div class="track-pills">
+            <span class="track-pill">GTM Strategy</span>
+            <span class="track-pill">Execution</span>
+          </div>
+          <div class="track-toggle">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="6" y1="0" x2="6" y2="12" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+              <line x1="0" y1="6" x2="12" y2="6" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="track-body">
+        <div class="track-body-inner">
+          <div class="track-body-content">
+            <div class="track-meta">
+              <div class="track-meta-label">Status</div>
+              <div class="track-meta-value">Launching at select incubators and companies in August 2026.</div>
+              <div class="track-meta-label">Focus</div>
+              <div class="track-meta-value">Go-to-market execution, distribution infrastructure, and real-world sales strategy for the Indian healthcare system.</div>
+            </div>
+            <div class="track-content">
+              <p class="track-description">Where marketing strategy meets real-world execution. This track takes founders from plan to market — building the GTM playbook, distribution strategy, and commercial infrastructure needed to actually sell in the Indian healthcare system.</p>
+              <div class="track-modules">
+                <div class="track-module">
+                  <div class="track-module-title">Go-To-Market Strategy</div>
+                  <div class="track-module-detail">Channel selection, customer prioritisation, pricing models, and market entry sequencing.</div>
+                </div>
+                <div class="track-module">
+                  <div class="track-module-title">Distribution &amp; Sales Infrastructure</div>
+                  <div class="track-module-detail">Distribution networks, hospital procurement navigation, and channel partner selection.</div>
+                </div>
+                <div class="track-module">
+                  <div class="track-module-title">Executional Playbook</div>
+                  <div class="track-module-detail">Real-time sales tactics, objection handling, clinical champion strategy, and reimbursement pathways.</div>
+                </div>
+                <div class="track-module">
+                  <div class="track-module-title">Final Presentation</div>
+                  <div class="track-module-detail">Complete GTM plan with live market evidence, evaluated by industry practitioners and institutional partners.</div>
+                </div>
+              </div>
+              <div class="track-cta">
+                <a href="mailto:info@valueaddition.co">Register your interest</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
 </div>
+
+<script>
+  function toggleTrack(id) {
+    const card = document.getElementById(id);
+    card.classList.toggle('open');
+  }
+</script>
 
 <footer>
   <div class="footer-top">
