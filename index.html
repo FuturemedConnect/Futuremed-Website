@@ -672,8 +672,8 @@
   .logo-strip-track:hover { animation-play-state: paused; }
 
   @keyframes scroll-logos {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-100%); }
   }
 
   .logo-strip-item {
@@ -681,16 +681,18 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    opacity: 0.55;
+    opacity: 0.85;
     transition: opacity 0.2s;
-    filter: grayscale(100%);
+    filter: grayscale(0%);
   }
   .logo-strip-item:hover { opacity: 1; filter: grayscale(0%); }
 
   .logo-strip-item img {
-    height: 36px;
+    height: 52px;
     width: auto;
+    max-width: 160px;
     object-fit: contain;
+    mix-blend-mode: multiply;
   }
 
   /* ── CLOSING CTA ── */
@@ -869,28 +871,29 @@
   .logo-strip-track:hover { animation-play-state: paused; }
 
   @keyframes scroll-logos {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+    from { transform: translateX(100vw); }
+    to   { transform: translateX(-100%); }
   }
 
   .logo-strip-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    opacity: 0.55;
+    gap: 1rem;
+    opacity: 0.85;
     transition: opacity 0.2s;
     flex-shrink: 0;
   }
   .logo-strip-item:hover { opacity: 1; }
 
   .logo-strip-item img {
-    height: 36px;
+    height: 52px;
     width: auto;
-    max-width: 120px;
+    max-width: 160px;
     object-fit: contain;
-    filter: grayscale(1);
+    filter: grayscale(0);
     transition: filter 0.2s;
+    mix-blend-mode: multiply;
   }
   .logo-strip-item:hover img { filter: grayscale(0); }
 
@@ -1194,7 +1197,7 @@
     <a href="collective.html" style="font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.2s;">The Collective</a>
     <a href="institute.html" style="font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.2s;">Institute</a>
   </div>
-  <a href="/cdn-cgi/l/email-protection#90f9fef6ffd0e6f1fce5f5f1f4f4f9e4f9fffebef3ff" class="nav-cta-desktop" style="font-size:0.75rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--navy); background:var(--accent); padding:0.6rem 1.4rem; text-decoration:none; transition:background 0.2s;">Get in Touch</a>
+  <a href="mailto:info@valueaddition.co" class="nav-cta-desktop" style="font-size:0.75rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--navy); background:var(--accent); padding:0.6rem 1.4rem; text-decoration:none; transition:background 0.2s;">Get in Touch</a>
   <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">
     <span></span>
     <span></span>
@@ -1210,7 +1213,7 @@
   <a href="about.html">About</a>
   <a href="collective.html">The Collective</a>
   <a href="institute.html">Institute</a>
-  <a href="/cdn-cgi/l/email-protection#90f9fef6ffd0e6f1fce5f5f1f4f4f9e4f9fffebef3ff" class="mobile-cta">Get in Touch</a>
+  <a href="mailto:info@valueaddition.co" class="mobile-cta">Get in Touch</a>
 </div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
@@ -2118,9 +2121,10 @@ document.querySelectorAll('.prog-row-item').forEach(item => {
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-        <li><a href="/cdn-cgi/l/email-protection#264f4840496650474a53434742424f524f4948084549"><span class="__cf_email__" data-cfemail="630a0d050c2315020f16060207070a170a0c0d4d000c">[email&#160;protected]</span></a></li>
-        <li><a href="/cdn-cgi/l/email-protection#c3aaada5ac83b5a2afb6a6a2a7a7aab7aaacadeda0ac">Apply to Programme</a></li>
-        <li><a href="/cdn-cgi/l/email-protection#e980878f86a99f88859c8c888d8d809d808687c78a86">Partner With Us</a></li>
+        <!-- <li><a href="/cdn-cgi/l/email-protection#264f4840496650474a53434742424f524f4948084549"><span class="__cf_email__" data-cfemail="630a0d050c2315020f16060207070a170a0c0d4d000c">[email&#160;protected]</span></a></li> -->
+        <li><a href="mailto:info@valueaddition.co">info@valueaddition.co</a></li>
+        <li><a href="mailto:info@valueaddition.co">Apply to Programme</a></li>
+        <li><a href="mailto:info@valueaddition.co">Partner With Us</a></li>
         <li><a href="blog.html">Perspectives</a></li>
       </ul>
     </div>
