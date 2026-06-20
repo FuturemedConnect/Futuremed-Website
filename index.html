@@ -727,7 +727,7 @@
 
   .contact-sub {
     font-size: 1rem;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.85);
     font-weight: 300;
     line-height: 1.8;
     max-width: 480px;
@@ -1078,6 +1078,9 @@
     transition: background 0.2s;
   }
 
+  .cta-email{font-family:var(--font-display);font-size:1.5rem;font-weight:400;color:var(--navy);text-decoration:none;border-bottom:1px solid rgba(10,22,40,0.3);padding-bottom:2px;transition:color 0.2s;position:relative}
+  .cta-email:hover{color:var(--white)}
+
   /* ── RESPONSIVE ── */
   @media (max-width: 1000px) {
     .section-header { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -1088,6 +1091,9 @@
     .pr-left { position: static !important; height: auto !important; padding-right: 0 !important; margin-bottom: 2rem; }
     .pr-right { border-left: none !important; padding-left: 0 !important; }
     .pr-right-group { height: auto !important; min-height: 0 !important; padding: 2rem 0 !important; }
+    .prog-split-grid { grid-template-columns: 1fr !important; }
+    .inst-header-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+    .inst-pillars-grid { grid-template-columns: 1fr !important; }
   }
 
   @media (max-width: 768px) {
@@ -1104,8 +1110,11 @@
     .about-grid { grid-template-columns: 1fr !important; min-height: auto !important; }
     .about-grid > div:first-child { padding: 3rem 1.25rem !important; border-right: none !important; }
     .about-grid > div:last-child { padding: 2rem 1.25rem !important; }
-    #what-we-do, #about, #partners, #contact { padding: 4rem 1.25rem !important; }
+    #what-we-do, #about, #partners, #institute, #contact { padding: 4rem 1.25rem !important; }
     #hero-intro { padding: 3rem 1.25rem !important; min-height: 80vh; }
+    .prog-header { margin-bottom: 3rem !important; }
+    .prog-split-left, .prog-split-right { padding: 3rem 1.25rem !important; }
+    .inst-pillar-card { padding: 2rem 1.25rem !important; }
     .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
     .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
     .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
@@ -1812,7 +1821,7 @@
   <div style="max-width: 1200px; margin: 0 auto; position: relative;">
 
     <!-- Header -->
-    <div style="max-width: 640px; margin-bottom: 6rem;">
+    <div class="prog-header" style="max-width: 640px; margin-bottom: 6rem;">
       <div class="section-eyebrow" style="color: rgba(10,22,40,0.5); letter-spacing:0.2em;">Our Programmes</div>
       <h2 style="font-family: var(--font-display); font-size: 2.4rem; font-weight: 400; color: #0a1628; line-height: 1.15; margin-top: 0.75rem; margin-bottom: 1.5rem;">
         Structured pathways to commercialisation
@@ -1823,10 +1832,10 @@
     </div>
 
     <!-- Programmes: Split screen — navy left, yellow right -->
-    <div style="display:grid; grid-template-columns:1fr 1fr; min-height:500px;">
+    <div class="prog-split-grid" style="display:grid; grid-template-columns:1fr 1fr; min-height:500px;">
 
       <!-- Left: yellow intro -->
-      <div style="background:#d4a017; padding:4rem; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden;">
+      <div class="prog-split-left" style="background:#d4a017; padding:4rem; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden;">
         
         <p style="font-size:0.65rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-bottom:1.25rem;">Our Programmes</p>
         <h2 style="font-family:var(--font-display); font-size:2.4rem; font-weight:400; color:#ffffff; line-height:1.15; margin-bottom:1.5rem;">Every stage has its own playbook.</h2>
@@ -1834,7 +1843,7 @@
       </div>
 
       <!-- Right: white programme list -->
-      <div style="background:#ffffff; padding:4rem; display:flex; flex-direction:column; justify-content:center; gap:0;">
+      <div class="prog-split-right" style="background:#ffffff; padding:4rem; display:flex; flex-direction:column; justify-content:center; gap:0;">
 
         <!-- Hint -->
         <p style="font-family:var(--font-body); font-size:0.65rem; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:rgba(10,22,40,0.4); margin-bottom:1.5rem; display:flex; align-items:center; gap:0.5rem;">Click to explore <span style="font-size:0.8rem;">↓</span></p>
@@ -1904,7 +1913,7 @@ document.querySelectorAll('.prog-row-item').forEach(item => {
   <div style="max-width:1200px; margin:0 auto; position:relative; z-index:1;">
 
     <!-- Header row -->
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:end; margin-bottom:4rem;">
+    <div class="inst-header-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:end; margin-bottom:4rem;">
       <div>
         <div style="font-size:0.72rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:#d4a017; margin-bottom:1.25rem; display:flex; align-items:center; gap:0.75rem;">
           <span style="display:block; width:28px; height:1px; background:#d4a017; opacity:0.6; flex-shrink:0;"></span>
@@ -1926,10 +1935,10 @@ document.querySelectorAll('.prog-row-item').forEach(item => {
     </div>
 
     <!-- Two pillars -->
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;">
+    <div class="inst-pillars-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;">
 
       <!-- Perspectives -->
-      <div style="background:#ffffff; border-top:2px solid #ceb07a; padding:2.75rem 3rem 3rem; display:flex; flex-direction:column; gap:1.5rem;">
+      <div class="inst-pillar-card" style="background:#ffffff; border-top:2px solid #ceb07a; padding:2.75rem 3rem 3rem; display:flex; flex-direction:column; gap:1.5rem;">
         <div style="font-size:0.65rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:#d4a017;">01 &nbsp;&middot;&nbsp; Newsletter</div>
         <div>
           <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.75rem; font-weight:400; color:#0a1628; line-height:1.2; margin-bottom:0.6rem;">Perspectives</h3>
@@ -1955,7 +1964,7 @@ document.querySelectorAll('.prog-row-item').forEach(item => {
       </div>
 
       <!-- Education Modules -->
-      <div style="background:#0a1628; border-top:2px solid #ceb07a; padding:2.75rem 3rem 3rem; display:flex; flex-direction:column; gap:1.5rem;">
+      <div class="inst-pillar-card" style="background:#0a1628; border-top:2px solid #ceb07a; padding:2.75rem 3rem 3rem; display:flex; flex-direction:column; gap:1.5rem;">
         <div style="font-size:0.65rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:#ceb07a;">02 &nbsp;&middot;&nbsp; Education Modules</div>
         <div>
           <h3 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.75rem; font-weight:400; color:#ffffff; line-height:1.2; margin-bottom:0.6rem;">Programmes for Incubators</h3>
@@ -2006,7 +2015,7 @@ document.querySelectorAll('.prog-row-item').forEach(item => {
     </svg>
   </div>
   <div class="contact-inner" style="position:relative; z-index:1;">
-    <div style="display:flex; justify-content:center; margin-bottom:2rem;">
+    <!-- <div style="display:flex; justify-content:center; margin-bottom:2rem;">
       <svg width="72" height="84" viewBox="0 0 680 560" xmlns="http://www.w3.org/2000/svg" style="opacity:0.7;">
         <g transform="translate(340, 200)" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path d="M 0 -162 A 162 162 0 0 1 162 0 A 162 162 0 0 1 81 140 M -81 140 A 162 162 0 0 1 -162 0 A 162 162 0 0 1 0 -162" stroke-width="22" stroke="#c8a96e" opacity="0.9"/>
@@ -2019,13 +2028,14 @@ document.querySelectorAll('.prog-row-item').forEach(item => {
           <line x1="0" y1="8" x2="0" y2="162" stroke-width="13" stroke="#c8a96e" opacity="0.82" stroke-linecap="round"/>
         </g>
       </svg>
-    </div>
-    <div class="section-eyebrow" style="justify-content: center; color: rgba(200,169,110,0.7);">Get Involved</div>
+    </div> -->
+    <div class="section-eyebrow" style="justify-content: center; color: var(--navy);">Get Involved</div>
     <h2 class="contact-title">Join The Collective</h2>
     <p class="contact-sub">
       Whether you're a medtech startup, VC fund, angel investor, clinical institution, or strategic partner — we'd love to explore how we can work together.
     </p>
-    <a href="/cdn-cgi/l/email-protection#bcd5d2dad3fccaddd0c9d9ddd8d8d5c8d5d3d292dfd3" class="contact-email"><span class="__cf_email__" data-cfemail="99f0f7fff6d9eff8f5ecfcf8fdfdf0edf0f6f7b7faf6">[email&#160;protected]</span></a>
+    <!-- <a href="/cdn-cgi/l/email-protection#bcd5d2dad3fccaddd0c9d9ddd8d8d5c8d5d3d292dfd3" class="contact-email"><span class="__cf_email__" data-cfemail="99f0f7fff6d9eff8f5ecfcf8fdfdf0edf0f6f7b7faf6">[email&#160;protected]</span></a> -->
+    <a href="mailto:info@valueaddition.co" class="cta-email">info@valueaddition.co</a>
   </div>
 </section>
 

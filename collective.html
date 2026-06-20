@@ -71,12 +71,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .cta-section{padding:6rem 4rem;background:#d4a017;text-align:center;position:relative;overflow:hidden}
 .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(200,169,110,0.1) 0%,transparent 60%)}
 .cta-title{font-family:var(--font-display);font-size:clamp(2rem,3vw,3.2rem);font-weight:400;color:var(--white);margin-bottom:1.25rem;position:relative}
-.cta-sub{font-size:0.95rem;color:rgba(255,255,255,0.5);font-weight:300;max-width:440px;margin:0 auto 2.5rem;line-height:1.8;position:relative}
-.cta-email{font-family:var(--font-display);font-size:1.5rem;font-weight:400;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(200,169,110,0.4);padding-bottom:2px;transition:color 0.2s;position:relative}
-.cta-email:hover{color:var(--accent-light)}
-footer{background:#060e1a;border-top:1px solid rgba(255,255,255,0.06);padding:2rem 4rem;display:flex;align-items:center;justify-content:space-between}
-.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.25)}
-.footer-tagline{font-family:var(--font-display);font-size:0.9rem;font-style:italic;color:rgba(255,255,255,0.25)}
+.cta-sub{font-size:0.95rem;color:rgba(255,255,255,0.85);font-weight:300;max-width:440px;margin:0 auto 2.5rem;line-height:1.8;position:relative}
+.cta-email{font-family:var(--font-display);font-size:1.5rem;font-weight:400;color:var(--navy);text-decoration:none;border-bottom:1px solid rgba(10,22,40,0.3);padding-bottom:2px;transition:color 0.2s;position:relative}
+.cta-email:hover{color:var(--white)}
   /* ── HAMBURGER BUTTON ── */
   .hamburger-btn {
     display: none;
@@ -153,53 +150,28 @@ footer{background:#060e1a;border-top:1px solid rgba(255,255,255,0.06);padding:2r
     transition: background 0.2s;
   }
 
-  @media(max-width:1000px){.ecosystem-grid{grid-template-columns:1fr 1fr}}
-  
-  @media(max-width:768px){
-    .hamburger-btn { display: block; }
-    #floatnav { padding: 0.75rem 1.25rem !important; }
-    #floatnav .nav-links-desktop { display: none !important; }
-    #floatnav .nav-cta-desktop { display: none !important; }
-    #floatnav .nav-logo svg { width: 120px; height: 100px; }
-    .page-hero,.ecosystem,.experts-section,.cta-section{padding-left:1.25rem;padding-right:1.25rem}
-    .experts-grid,.ecosystem-grid{grid-template-columns:1fr}
-    footer{flex-direction:column;gap:1rem;text-align:center;padding:3rem 1.25rem 2rem}
-    .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
-    .people-wrap { grid-template-columns: 1fr !important; }
-    .people-nav { display: flex; flex-direction: row; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; border-bottom: 2px solid #c8a96e; }
-    .people-nav::-webkit-scrollbar { display: none; }
-    .people-nav-item { padding: 1rem 1.25rem !important; border-left: none !important; border-bottom: 4px solid transparent; }
-    .people-nav-item.active { border-left: none !important; border-bottom: 4px solid #c8a96e !important; }
-    .people-content { padding: 2rem 1.25rem !important; border-top: none !important; }
-  }
-
-  @media(max-width:480px){
-    #floatnav .nav-logo svg { width: 100px; height: 84px; }
-    .footer-top { grid-template-columns: 1fr; gap: 1.5rem; }
-  }
-/* ── FOOTER ── */
+  /* ── FOOTER ── */
   footer {
-    background: #d4a017;
-    border-top: 1px solid rgba(255,255,255,0.07);
+    background: #060e1a;
     padding: 5rem 4rem 3rem;
-    display: flex;
-    flex-direction: column;
+    border-top: 1px solid rgba(255,255,255,0.06);
   }
 
   .footer-top {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
     gap: 4rem;
-    margin-bottom: 4rem;
+    max-width: 1200px;
+    margin: 0 auto 4rem;
   }
 
   .footer-brand p {
     font-size: 0.85rem;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.35);
     font-weight: 300;
     line-height: 1.8;
     margin-top: 1.25rem;
-    max-width: 260px;
+    max-width: 240px;
   }
 
   .footer-col h4 {
@@ -207,7 +179,7 @@ footer{background:#060e1a;border-top:1px solid rgba(255,255,255,0.06);padding:2r
     font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.5);
     margin-bottom: 1.25rem;
   }
 
@@ -218,26 +190,33 @@ footer{background:#060e1a;border-top:1px solid rgba(255,255,255,0.06);padding:2r
     gap: 0.75rem;
   }
 
-  .footer-col ul li a {
+  .footer-col ul a {
     font-size: 0.85rem;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.45);
     text-decoration: none;
     font-weight: 300;
     transition: color 0.2s;
   }
-  .footer-col ul li a:hover { color: var(--white); }
+  .footer-col ul a:hover { color: var(--accent); }
 
   .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
   }
 
   .footer-copy {
     font-size: 0.75rem;
-    color: rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.35);
     letter-spacing: 0.05em;
   }
 
@@ -247,6 +226,35 @@ footer{background:#060e1a;border-top:1px solid rgba(255,255,255,0.06);padding:2r
     font-style: italic;
     color: rgba(255,255,255,0.25);
   }
+
+  @media(max-width:1000px){.ecosystem-grid{grid-template-columns:1fr 1fr}}
+  
+  @media(max-width:768px){
+    .hamburger-btn { display: block; }
+    #floatnav { padding: 0.75rem 1.25rem !important; }
+    #floatnav .nav-links-desktop { display: none !important; }
+    #floatnav .nav-cta-desktop { display: none !important; }
+    #floatnav .nav-logo svg { width: 120px; height: 100px; }
+    .page-hero{padding-left:1.25rem;padding-right:1.25rem}
+    .ecosystem,.experts-section,.cta-section,.people-section{padding:4rem 1.25rem !important}
+    .experts-grid,.ecosystem-grid{grid-template-columns:1fr}
+    footer { padding: 3rem 1.25rem 2rem !important; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+    .people-wrap { grid-template-columns: 1fr !important; }
+    .people-nav { display: flex; flex-direction: row; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; border-bottom: 2px solid #c8a96e; }
+    .people-nav > div:not(.people-nav-item) { display: none; }
+    .people-nav::-webkit-scrollbar { display: none; }
+    .people-nav-item { padding: 1rem 1.25rem !important; border-left: none !important; border-bottom: 4px solid transparent; }
+    .people-nav-item.active { border-left: none !important; border-bottom: 4px solid #c8a96e !important; }
+    .people-content { padding: 2rem 1.25rem !important; border-top: none !important; }
+  }
+
+  @media(max-width:480px){
+    #floatnav .nav-logo svg { width: 100px; height: 84px; }
+    .footer-top { grid-template-columns: 1fr; gap: 1.5rem; }
+  }
+
 
 
   #contact::before {
@@ -396,10 +404,8 @@ footer{background:#060e1a;border-top:1px solid rgba(255,255,255,0.06);padding:2r
 
 
 
-<section class="cta-section">
-
 <!-- OUR PEOPLE SECTION -->
-<section style="padding:7rem 4rem; background:#f2f1ed;">
+<section class="people-section" style="padding:7rem 4rem; background:#f2f1ed;">
   <div style="max-width:1200px; margin:0 auto;">
 
     <!-- Eyebrow -->
@@ -526,7 +532,7 @@ function switchPeople(key) {
     const content = document.getElementById('pcontent-' + k);
     if (k === key) {
       if (window.innerWidth > 768) {
-        nav.style.background = '#0a1628';
+        nav.style.background = '#d4a017';
         nav.style.borderLeft = '4px solid #c8a96e';
       } else {
         nav.style.background = 'transparent';
@@ -555,6 +561,7 @@ window.addEventListener('resize', () => {
     switchPeople(id);
   }
 });
+switchPeople('ta');
 </script>
 
 <section class="cta-section">
@@ -567,31 +574,42 @@ window.addEventListener('resize', () => {
   <div class="footer-top">
     <div class="footer-brand">
       <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.25rem;">
-        <svg width="64" height="64" viewBox="38 38 324 324" xmlns="http://www.w3.org/2000/svg">
-          <g transform="translate(200,200)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M 0 -162 A 162 162 0 0 1 162 0 A 162 162 0 0 1 81 140 M -81 140 A 162 162 0 0 1 -162 0 A 162 162 0 0 1 0 -162" stroke-width="4" stroke="#ffffff" opacity="0.85"/>
-            <path d="M 95 -95 A 134 134 0 0 1 134 0 A 134 134 0 0 1 67 116 M -67 116 A 134 134 0 0 1 -134 0 A 134 134 0 0 1 -95 -95 A 134 134 0 0 1 0 -134 A 134 134 0 0 1 67 -116" stroke-width="4" stroke="#ffffff" opacity="0.65"/>
-            <path d="M 0 -106 A 106 106 0 0 1 106 0 A 106 106 0 0 1 53 92 M -53 92 A 106 106 0 0 1 -106 0 A 106 106 0 0 1 -53 -92 A 106 106 0 0 1 0 -106" stroke-width="3.5" stroke="#ffffff" opacity="0.5"/>
-            <path d="M -56 -56 A 80 80 0 0 1 0 -80 A 80 80 0 0 1 80 0 A 80 80 0 0 1 40 69 M -40 69 A 80 80 0 0 1 -80 0 A 80 80 0 0 1 -56 -56" stroke-width="3" stroke="#ffffff" opacity="0.38"/>
-            <path d="M 0 -54 A 54 54 0 0 0 -54 0 A 54 54 0 0 0 0 54 A 54 54 0 0 0 40 37" stroke-width="3" stroke="#ffffff" opacity="0.9"/>
-            <path d="M 54 0 A 54 54 0 0 0 0 -54" stroke-width="3" stroke="#ffffff" opacity="0.35"/>
-            <circle cx="0" cy="0" r="28" stroke-width="2.5" stroke="#ffffff" opacity="0.9"/>
-            <circle cx="0" cy="0" r="8" fill="#ffffff" stroke="none"/>
-            <circle cx="0" cy="0" r="3.5" fill="#d4a017" stroke="none"/>
-            <line x1="0" y1="-162" x2="0" y2="-134" stroke-width="3.5" stroke="#ffffff" opacity="0.65"/>
-            <line x1="114" y1="-114" x2="95" y2="-95" stroke-width="3" stroke="#ffffff" opacity="0.55"/>
-            <line x1="162" y1="0" x2="134" y2="0" stroke-width="3" stroke="#ffffff" opacity="0.55"/>
-            <line x1="-162" y1="0" x2="-134" y2="0" stroke-width="3" stroke="#ffffff" opacity="0.55"/>
-            <line x1="0" y1="8" x2="0" y2="162" stroke-width="2.5" stroke="#ffffff" opacity="0.82" stroke-linecap="round"/>
+        <svg width="64" height="64" viewBox="152 152 376 376" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(340,340)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 0 -162 A 162 162 0 0 1 162 0 A 162 162 0 0 1 81 140 M -81 140 A 162 162 0 0 1 -162 0 A 162 162 0 0 1 0 -162" stroke-width="10" stroke="#ffffff" opacity="0.85"/>
+            <path d="M 95 -95 A 134 134 0 0 1 134 0 A 134 134 0 0 1 67 116 M -67 116 A 134 134 0 0 1 -134 0 A 134 134 0 0 1 -95 -95 A 134 134 0 0 1 0 -134 A 134 134 0 0 1 67 -116" stroke-width="8" stroke="#ffffff" opacity="0.65"/>
+            <path d="M 0 -106 A 106 106 0 0 1 106 0 A 106 106 0 0 1 53 92 M -53 92 A 106 106 0 0 1 -106 0 A 106 106 0 0 1 -53 -92 A 106 106 0 0 1 0 -106" stroke-width="7" stroke="#ffffff" opacity="0.5"/>
+            <path d="M -56 -56 A 80 80 0 0 1 0 -80 A 80 80 0 0 1 80 0 A 80 80 0 0 1 40 69 M -40 69 A 80 80 0 0 1 -80 0 A 80 80 0 0 1 -56 -56" stroke-width="6" stroke="#ffffff" opacity="0.38"/>
+            <path d="M 0 -54 A 54 54 0 0 0 -54 0 A 54 54 0 0 0 0 54 A 54 54 0 0 0 40 37" stroke-width="6" stroke="#c8a96e" opacity="0.9"/>
+            <path d="M 54 0 A 54 54 0 0 0 0 -54" stroke-width="6" stroke="#c8a96e" opacity="0.35"/>
+            <circle cx="0" cy="0" r="28" stroke-width="5" stroke="#c8a96e" opacity="0.9"/>
+            <circle cx="0" cy="0" r="8" fill="#c8a96e" stroke="none"/>
+            <circle cx="0" cy="0" r="3.5" fill="#0a1628" stroke="none"/>
+            <line x1="0" y1="-162" x2="0" y2="-134" stroke-width="8" stroke="#ffffff" opacity="0.65"/>
+            <line x1="114" y1="-114" x2="95" y2="-95" stroke-width="7" stroke="#ffffff" opacity="0.55"/>
+            <line x1="162" y1="0" x2="134" y2="0" stroke-width="7" stroke="#ffffff" opacity="0.55"/>
+            <line x1="-162" y1="0" x2="-134" y2="0" stroke-width="7" stroke="#ffffff" opacity="0.55"/>
+            <line x1="-114" y1="114" x2="-95" y2="95" stroke-width="7" stroke="#ffffff" opacity="0.45"/>
+            <line x1="0" y1="-134" x2="0" y2="-106" stroke-width="6" stroke="#ffffff" opacity="0.58"/>
+            <line x1="134" y1="0" x2="106" y2="0" stroke-width="6" stroke="#ffffff" opacity="0.48"/>
+            <line x1="106" y1="0" x2="80" y2="0" stroke-width="6" stroke="#ffffff" opacity="0.5"/>
+            <line x1="-106" y1="0" x2="-80" y2="0" stroke-width="6" stroke="#ffffff" opacity="0.45"/>
+            <line x1="0" y1="106" x2="0" y2="80" stroke-width="6" stroke="#c8a96e" opacity="0.72"/>
+            <line x1="0" y1="-80" x2="0" y2="-54" stroke-width="5" stroke="#ffffff" opacity="0.55"/>
+            <line x1="80" y1="0" x2="54" y2="0" stroke-width="5" stroke="#c8a96e" opacity="0.68"/>
+            <line x1="-80" y1="0" x2="-54" y2="0" stroke-width="5" stroke="#ffffff" opacity="0.45"/>
+            <line x1="0" y1="80" x2="0" y2="54" stroke-width="5" stroke="#c8a96e" opacity="0.62"/>
+            <line x1="0" y1="-54" x2="0" y2="-28" stroke-width="5" stroke="#c8a96e" opacity="0.78"/>
+            <line x1="-54" y1="0" x2="-28" y2="0" stroke-width="5" stroke="#ffffff" opacity="0.45"/>
+            <line x1="0" y1="8" x2="0" y2="162" stroke-width="6" stroke="#c8a96e" opacity="0.82" stroke-linecap="round"/>
           </g>
         </svg>
         <div>
-          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.7rem; font-weight:600; color:#ffffff; display:block; line-height:1.1;">future<span style="color:#ffffff;">.</span>med</span>
+          <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.7rem; font-weight:600; color:#ffffff; display:block; line-height:1.1;">future<span style="color:#ceb07a;">.</span>med</span>
           <span style="font-family:'DM Sans',sans-serif; font-size:0.6rem; font-weight:600; letter-spacing:0.28em; text-transform:uppercase; color:rgba(255,255,255,0.55); display:block; margin-top:0.2rem;">Connect</span>
         </div>
       </div>
       <p style="font-size:0.85rem; color:rgba(255,255,255,0.45); font-weight:300; line-height:1.8; max-width:240px; font-family:'DM Sans',sans-serif; font-style:italic;">"We build the ecosystem, you scale your innovation."</p>
-
     </div>
     <div class="footer-col">
       <h4>Platform</h4>
@@ -614,17 +632,16 @@ window.addEventListener('resize', () => {
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-        <li><a href="mailto:info@valueaddition.co">info@valueaddition.co</a></li>
-        <li><a href="mailto:info@valueaddition.co">Apply to Programme</a></li>
-        <li><a href="mailto:info@valueaddition.co">Partner With Us</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#264f4840496650474a53434742424f524f4948084549"><span class="__cf_email__" data-cfemail="630a0d050c2315020f16060207070a170a0c0d4d000c">[email&#160;protected]</span></a></li>
+        <li><a href="/cdn-cgi/l/email-protection#c3aaada5ac83b5a2afb6a6a2a7a7aab7aaacadeda0ac">Apply to Programme</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#e980878f86a99f88859c8c888d8d809d808687c78a86">Partner With Us</a></li>
         <li><a href="blog.html">Perspectives</a></li>
       </ul>
     </div>
   </div>
-
-  <div style="border-top:1px solid rgba(255,255,255,0.12); margin-top:auto; padding-top:1.5rem; display:flex; align-items:center; justify-content:space-between;">
-    <span style="font-family:'DM Sans',sans-serif; font-size:0.72rem; color:rgba(255,255,255,0.25); letter-spacing:0.05em;">&copy; 2024 Value Addition Services. All rights reserved.</span>
-    <span style="font-family:'DM Sans',sans-serif; font-size:0.72rem; color:rgba(255,255,255,0.25); letter-spacing:0.05em;">future.med Connect</span>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2024 Value Addition Services. All rights reserved.</span>
+    <span style="font-family:'DM Sans',sans-serif; font-size:0.72rem; color:rgba(255,255,255,0.3);">future.med Connect</span>
   </div>
 </footer>
 
