@@ -1013,6 +1013,63 @@
     letter-spacing: 0.05em;
   }
 
+
+  /* ── TOOLTIPS ── */
+  [data-tooltip] {
+    position: relative;
+    display: inline-block;
+  }
+
+  [data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background: var(--navy);
+    color: var(--white);
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(10,22,40,0.15);
+    font-family: var(--font-body);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  [data-tooltip]::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    border: 6px solid transparent;
+    border-top-color: var(--navy);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 1000;
+    pointer-events: none;
+  }
+
+  [data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-8px);
+  }
+  
+  [data-tooltip]:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(4px);
+  }
+
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -1761,20 +1818,20 @@
     <div class="pr-right-group" data-index="1">
       <p style="font-size:0.9rem; color:rgba(10,22,40,0.55); line-height:1.85; font-weight:300; max-width:480px; margin-bottom:2.5rem;">Our scientific and clinical partners are established institutions that have played pioneering roles in the development of medical devices for decades.</p>
       <div class="pr-logos-row">
-        <a href="https://tritech.nhs.wales/" target="_blank" title="Tritech"><img src="assets/images/img_187248446b.jpg" alt="Tritech" style="height:112px; width:auto; object-fit:contain;"/></a>
-        <a href="https://www.pdr-design.com/" target="_blank" title="PDR"><img src="assets/images/img_d3ced14df8.jpeg" alt="PDR" style="height:100px; width:auto; object-fit:contain;"/></a>
+        <a href="https://tritech.nhs.wales/" target="_blank" data-tooltip="Tritech"><img src="assets/images/img_187248446b.jpg" alt="Tritech" style="height:112px; width:auto; object-fit:contain;"/></a>
+        <a href="https://www.pdr-design.com/" target="_blank" data-tooltip="PDR-design, world's leading medtech design institute"><img src="assets/images/img_d3ced14df8.jpeg" alt="PDR" style="height:100px; width:auto; object-fit:contain;"/></a>
       </div>
     </div>
 
     <div class="pr-right-group" data-index="2">
       <p style="font-size:0.9rem; color:rgba(10,22,40,0.55); line-height:1.85; font-weight:300; max-width:480px; margin-bottom:2.5rem;">Our knowledge partners bring legal, innovation, technology and management expertise — each an essential pillar of a successful medtech commercialisation journey.</p>
       <div class="pr-logos-row">
-        <a href="https://cms-induslaw.com/en/ind/" target="_blank" title="CMS Indus Law"><img src="assets/images/img_e290409dd2.png" alt="CMS Indus Law" style="height:26px; width:auto; object-fit:contain;"/></a>
-        <a href="#" target="_blank" title="Value Addition"><img src="assets/images/img_bb23b0925a.jpg" alt="Value Addition" style="height:85px; width:auto; object-fit:contain;" /></a>
-        <a href="#" target="_blank" title="Credas"><img src="assets/images/img_9d9687df09.png" alt="Credas" style="height:120px; width:auto; object-fit:contain;" /></a>
-        <span style="font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;color:rgba(10,22,40,0.45)">Genworks</span>
+        <a href="https://cms-induslaw.com/en/ind/" data-tooltip="CMS Indus Law" target="_blank"><img src="assets/images/img_e290409dd2.png" alt="CMS Indus Law" style="height:26px; width:auto; object-fit:contain;"/></a>
+        <a href="#" target="_blank" data-tooltip="Value Addition"><img src="assets/images/img_bb23b0925a.jpg" alt="Value Addition" style="height:85px; width:auto; object-fit:contain;" /></a>
+        <a href="#" target="_blank" data-tooltip="Credas"><img src="assets/images/img_9d9687df09.png" alt="Credas" style="height:120px; width:auto; object-fit:contain;" /></a>
+        <!-- <span style="font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;color:rgba(10,22,40,0.45)">Genworks</span>
         <span style="font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;color:rgba(10,22,40,0.45)">IKP</span>
-        <span style="font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;color:rgba(10,22,40,0.45)">IIM Bangalore</span>
+        <span style="font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;color:rgba(10,22,40,0.45)">IIM Bangalore</span> -->
       </div>
     </div>
 
@@ -1879,10 +1936,10 @@
       <div>
         <div style="border-top:1px solid rgba(255,255,255,0.12); padding-top:1.25rem; margin-bottom:1.25rem;"></div>
         <div class="ic-logos" style="display:grid; grid-template-columns:repeat(4,1fr); gap:1rem;">
-          <div style="background:#fff; border-radius:3px; display:flex; align-items:center; justify-content:center; padding:0.75rem 1rem; height:100px;"><a href="https://www.vinners.net/index/home" target="_blank" title="Vinners"><img src="assets/images/img_eaf76a5cef.png" alt="Vinners" style="max-width:100%; max-height:72px; object-fit:contain; display:block;"></a></div>
-          <div style="background:#fff; border-radius:3px; display:flex; align-items:center; justify-content:center; padding:0.75rem 1rem; height:100px;"><a href="https://thechennaiangels.com/" target="_blank" title="The Chennai Angels"><img src="assets/images/img_1b6b134224.jpg" alt="The Chennai Angels" style="max-width:100%; max-height:95px; object-fit:contain; display:block;"></a></div>
-          <div style="background:#fff; border-radius:3px; display:flex; align-items:center; justify-content:center; padding:0.75rem 1rem; height:100px;"><a href="https://ipventures.in/" target="_blank" title="Inflection Point Ventures"><img src="assets/images/img_e1efaf4248.png" alt="Inflection Point Ventures" style="max-width:100%; max-height:85px; object-fit:contain; display:block;"></a></div>
-          <div style="background:#fff; border-radius:3px; display:flex; align-items:center; justify-content:center; padding:0.75rem 1rem; height:100px;"><a href="https://www.phy-sis.com/" target="_blank" title="Physis Capital"><img src="assets/images/img_8caf448494.png" alt="Physis Capital" style="max-width:100%; max-height:72px; object-fit:contain; display:block;"></a></div>
+          <div style="background:#fff; border-radius:3px; display:flex; align-items:center; justify-content:center; padding:0.75rem 1rem; height:100px;"><a href="https://www.vinners.net/index/home" target="_blank" data-tooltip="Vinners"><img src="assets/images/img_eaf76a5cef.png" alt="Vinners" style="max-width:100%; max-height:72px; object-fit:contain; display:block;"></a></div>
+          <div style="background:#fff; border-radius:3px; display:flex; align-items:center; justify-content:center; padding:0.75rem 1rem; height:100px;"><a href="https://thechennaiangels.com/" target="_blank" data-tooltip="The Chennai Angels"><img src="assets/images/img_1b6b134224.jpg" alt="The Chennai Angels" style="max-width:100%; max-height:95px; object-fit:contain; display:block;"></a></div>
+          <div style="background:#fff; border-radius:3px; display:flex; align-items:center; justify-content:center; padding:0.75rem 1rem; height:100px;"><a href="https://ipventures.in/" target="_blank" data-tooltip="Inflection Point Ventures"><img src="assets/images/img_e1efaf4248.png" alt="Inflection Point Ventures" style="max-width:100%; max-height:85px; object-fit:contain; display:block;"></a></div>
+          <div style="background:#fff; border-radius:3px; display:flex; align-items:center; justify-content:center; padding:0.75rem 1rem; height:100px;"><a href="https://www.phy-sis.com/" target="_blank" data-tooltip="Physis Capital"><img src="assets/images/img_8caf448494.png" alt="Physis Capital" style="max-width:100%; max-height:72px; object-fit:contain; display:block;"></a></div>
         </div>
         </div>
       </div>
@@ -2137,15 +2194,15 @@ document.querySelectorAll('.prog-row-item').forEach(item => {
 <div class="logo-strip">
   <div class="logo-strip-track">
     
-      <div class="logo-strip-item"><a href="https://tritech.nhs.wales/" target="_blank" title="Tritech"><img src="assets/images/img_187248446b.jpg" alt="Tritech"/></a></div>
-      <div class="logo-strip-item"><a href="https://www.pdr-design.com/" target="_blank" title="PDR"><img src="assets/images/img_d3ced14df8.jpeg" alt="PDR"/></a></div>
-      <div class="logo-strip-item"><a href="https://www.vinners.net/index/home" target="_blank" title="Vinners"><img src="assets/images/img_eaf76a5cef.png" alt="Vinners"/></a></div>
-      <div class="logo-strip-item"><a href="https://thechennaiangels.com/" target="_blank" title="The Chennai Angels"><img src="assets/images/img_1b6b134224.png" alt="The Chennai Angels"/></a></div>
-      <div class="logo-strip-item"><a href="https://tritech.nhs.wales/" target="_blank" title="Tritech"><img src="assets/images/img_187248446b.jpg" alt="Tritech"/></a></div>
-      <!-- <div class="logo-strip-item"><a href="#" target="_blank" title="PDR"><img src="assets/images/img_d3ced14df8.jpeg" alt="PDR" style="filter:grayscale(100%) brightness(0.4);"/></a></div> -->
-      <div class="logo-strip-item"><a href="https://www.pdr-design.com/" target="_blank" title="PDR"><img src="assets/images/img_d3ced14df8.jpeg" alt="PDR"/></a></div>
-      <div class="logo-strip-item"><a href="https://www.vinners.net/index/home" target="_blank" title="Vinners"><img src="assets/images/img_eaf76a5cef.png" alt="Vinners"/></a></div>
-      <div class="logo-strip-item"><a href="https://thechennaiangels.com/" target="_blank" title="The Chennai Angels"><img src="assets/images/img_1b6b134224.png" alt="The Chennai Angels"/></a></div>
+      <div class="logo-strip-item"><a href="https://tritech.nhs.wales/" target="_blank" data-tooltip="Tritech"><img src="assets/images/img_187248446b.jpg" alt="Tritech"/></a></div>
+      <div class="logo-strip-item"><a href="https://www.pdr-design.com/" target="_blank" data-tooltip="PDR-design, world's leading medtech design institute"><img src="assets/images/img_d3ced14df8.jpeg" alt="PDR"/></a></div>
+      <div class="logo-strip-item"><a href="https://www.vinners.net/index/home" target="_blank" data-tooltip="Vinners"><img src="assets/images/img_eaf76a5cef.png" alt="Vinners"/></a></div>
+      <div class="logo-strip-item"><a href="https://thechennaiangels.com/" target="_blank" data-tooltip="The Chennai Angels"><img src="assets/images/img_1b6b134224.png" alt="The Chennai Angels"/></a></div>
+      <div class="logo-strip-item"><a href="https://tritech.nhs.wales/" target="_blank" data-tooltip="Tritech"><img src="assets/images/img_187248446b.jpg" alt="Tritech"/></a></div>
+      <!-- <div class="logo-strip-item"><a href="#" target="_blank" data-tooltip="PDR"><img src="assets/images/img_d3ced14df8.jpeg" alt="PDR" style="filter:grayscale(100%) brightness(0.4);"/></a></div> -->
+      <div class="logo-strip-item"><a href="https://www.pdr-design.com/" target="_blank" data-tooltip="PDR-design, world's leading medtech design institute"><img src="assets/images/img_d3ced14df8.jpeg" alt="PDR"/></a></div>
+      <div class="logo-strip-item"><a href="https://www.vinners.net/index/home" target="_blank" data-tooltip="Vinners"><img src="assets/images/img_eaf76a5cef.png" alt="Vinners"/></a></div>
+      <div class="logo-strip-item"><a href="https://thechennaiangels.com/" target="_blank" data-tooltip="The Chennai Angels"><img src="assets/images/img_1b6b134224.png" alt="The Chennai Angels"/></a></div>
   </div>
 </div>
 
