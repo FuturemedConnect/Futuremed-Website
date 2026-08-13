@@ -1007,8 +1007,45 @@
     transition: background 0.2s;
   }
 
+  /* ── FEATURED FIELD NOTES CARD ── */
+  .field-notes-card {
+    grid-column: 1 / -1;
+    background: #faf9f7;
+    border: 1px solid rgba(10,22,40,0.08);
+  }
+  .field-notes-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 2.5rem;
+    align-items: start;
+  }
+  .field-notes-stats {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(10,22,40,0.08);
+  }
+
+  /* ── RESPONSIVE MEDIA QUERIES ── */
   @media (max-width: 1000px) {
-    .articles-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  }
+
+  @media (max-width: 900px) {
+    .articles-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .field-notes-inner { grid-template-columns: 1fr; gap: 2rem; padding: 1.5rem; }
+    .module-card { grid-template-columns: 1fr; }
+    .module-card-meta { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 2rem; }
+    .module-card-body { padding: 2rem; }
+    .track-body-content { grid-template-columns: 1fr; }
+    .track-meta { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 1.5rem 2rem; }
+    .track-content { padding: 1.5rem 2rem; }
+    .track-header { padding: 1.5rem 2rem; }
+    .track-header-left { gap: 1.25rem; }
+    .track-pills { display: none; }
   }
 
   @media (max-width: 768px) {
@@ -1017,16 +1054,34 @@
     #floatnav .nav-links-desktop { display: none !important; }
     #floatnav .nav-cta-desktop { display: none !important; }
     #floatnav .nav-logo svg { width: 120px; height: 100px; }
-    .institute-hero, .articles-section, .modules-section, .section-header { padding-left: 1.25rem; padding-right: 1.25rem; }
-    .institute-hero { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; justify-content: center; }
-    footer { padding: 3rem 1.25rem 2rem !important; }
+    .institute-hero { padding: 8rem 1.25rem 4rem; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; justify-content: center; }
+    .institute-hero h1 { font-size: clamp(2.1rem, 7vw, 2.8rem); }
+    .section-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .section-tab { padding: 1rem 1.25rem; font-size: 0.68rem; white-space: nowrap; }
+    .section-header { padding: 3.5rem 1.25rem 0; }
+    .articles-section, .modules-section { padding: 2rem 1.25rem 4rem; }
+    .section-divider { padding: 0 1.25rem; }
+    footer { padding: 3.5rem 1.25rem 2rem !important; }
     .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
     .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
   }
 
   @media (max-width: 480px) {
     #floatnav .nav-logo svg { width: 100px; height: 84px; }
-    .footer-top { grid-template-columns: 1fr; gap: 1.5rem; }
+    .institute-hero { padding: 7rem 1rem 3rem; }
+    .institute-hero h1 { font-size: 1.85rem; }
+    .institute-hero p { font-size: 0.88rem; }
+    .section-header h2 { font-size: 1.75rem; }
+    .field-notes-inner { padding: 1.25rem; gap: 1.25rem; }
+    .field-notes-stats { gap: 1.25rem; }
+    .module-card-meta, .module-card-body { padding: 1.25rem; }
+    .module-timeline { grid-template-columns: 1fr; }
+    .module-cta, .track-cta { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    .track-header { padding: 1.25rem; }
+    .track-number { font-size: 1.6rem; }
+    .track-name { font-size: 1.35rem; }
+    .track-meta, .track-content { padding: 1.25rem; }
+    .footer-top { grid-template-columns: 1fr; gap: 1.75rem; }
   }
   </style>
 </head>
@@ -1179,9 +1234,9 @@
     <div class="articles-grid">
 
       <!-- Field Notes: IIM-B Bootcamp -->
-      <div class="article-card field-notes-card" style="grid-column:1/-1; background:#faf9f7; border:1px solid rgba(10,22,40,0.08);">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; padding:2.5rem; align-items:start;">
-          <div>
+      <div class="article-card field-notes-card">
+        <div class="field-notes-inner">
+          <div class="field-notes-content">
             <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1rem;">
               <span style="font-size:0.62rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:rgba(10,22,40,0.4);">June 2026</span>
               <span style="width:1px; height:10px; background:rgba(10,22,40,0.15); display:inline-block;"></span>
@@ -1189,9 +1244,9 @@
             </div>
             <h3 class="article-title" style="margin-bottom:1rem;">IIM Bangalore NSRCEL Healthcare Cohort Bootcamp</h3>
             <p class="article-excerpt">We ran the opening bootcamp for NSRCEL's Healthcare Cohort at IIM Bangalore — a full-day session bringing together medtech founders, health-tech builders and healthcare entrepreneurs from across India.</p>
-            <p class="article-excerpt" style="margin-top:0.75rem;">The session covered market ecosystem mapping, the 4A-5P framework, and source of volume — anchored by real case studies and breakout exercises by therapeutic area.</p>
+            <p class="article-excerpt" style="margin-top:0.75rem;">The session covered market ecosystem mapping, the 4A-6P framework, and source of volume — anchored by real case studies and breakout exercises by therapeutic area.</p>
             <p class="article-excerpt" style="margin-top:0.75rem;">This is the first of four sessions running through to the cohort's graduation presentation in Month 6.</p>
-            <div style="margin-top:1.5rem; display:flex; gap:2rem; padding-top:1.25rem; border-top:1px solid rgba(10,22,40,0.08);">
+            <div class="field-notes-stats">
               <div><span style="font-family:var(--font-display); font-size:1.8rem; font-weight:400; color:#0a1628; display:block; line-height:1;">40+</span><span style="font-size:0.62rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(10,22,40,0.4);">Founders</span></div>
               <div><span style="font-family:var(--font-display); font-size:1.8rem; font-weight:400; color:#0a1628; display:block; line-height:1;">4</span><span style="font-size:0.62rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(10,22,40,0.4);">Sessions</span></div>
               <div><span style="font-family:var(--font-display); font-size:1.8rem; font-weight:400; color:#0a1628; display:block; line-height:1;">IIM-B</span><span style="font-size:0.62rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(10,22,40,0.4);">NSRCEL</span></div>
@@ -1293,18 +1348,18 @@
               <div class="track-meta-label">Format</div>
               <div class="track-meta-value">Bootcamp + 3 structured sessions across the cohort programme.</div>
               <div class="track-meta-label">Built On</div>
-              <div class="track-meta-value">The 4A-5P Framework — Access, Adoption, Awareness, Affordability</div>
+              <div class="track-meta-value">The 4A-6P Framework — Access, Adoption, Awareness, Affordability</div>
               <div class="track-status">
                 <div class="track-status-dot"></div>
                 <div class="track-status-text">Active · Bootcamp 26 June 2026</div>
               </div>
             </div>
             <div class="track-content">
-              <p class="track-description">A structured marketing track for medtech founders — from market ecosystem and foundational strategy through to a complete marketing plan. Built on the 4A-5P framework.</p>
+              <p class="track-description">A structured marketing track for medtech founders — from market ecosystem and foundational strategy through to a complete marketing plan. Built on the 4A-6P framework.</p>
               <div class="track-modules">
                 <div class="track-module">
                   <div class="track-module-title">Marketing Foundations — Objective, Volume &amp; Differentiation</div>
-                  <div class="track-module-detail">4A-5P market ecosystem, business objective, marketing objective &amp; source of volume, main vs. dynamic variable, targeting &amp; positioning.</div>
+                  <div class="track-module-detail">4A-6P market ecosystem, business objective, marketing objective &amp; source of volume, main vs. dynamic variable, targeting &amp; positioning.</div>
                 </div>
                 <div class="track-module">
                   <div class="track-module-title">Value Proposition</div>
